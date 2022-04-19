@@ -1,8 +1,8 @@
 <template>
   <div id="commands">
     <hr>
-    <h1>The default prefix is $</h1>
-    <small id="com-exp">Use commands with multiple options with a space in between: $key add</small>
+    <h1>The command prefix is <code>/</code></h1>
+    <small id="com-exp">Use commands with multiple options with a space in between: <code>/key add</code></small>
     <hr>
     <div class="wrapper">
       <div class="col-1">
@@ -107,7 +107,7 @@
         </ul>
       </div>
     </div> <!-- Wrapper -->
-    <hr>
+    <!--<hr>
     <h3>Meta & Stats</h3>
     <hr>
     <div class="wrapper">
@@ -159,7 +159,7 @@
 
         </ul>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
