@@ -169,7 +169,7 @@ export default {
           }
         },
         skill: {
-          name: "skillinfo",
+          name: "skill",
           desc: "Information about a given skill"
         },
         tp: {
