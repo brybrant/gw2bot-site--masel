@@ -11,7 +11,7 @@
     <p id="apicheck">
       <span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
     </p>
-    <router-view :invite-link='"https://discordapp.com/oauth2/authorize?client_id=310050883100737536&scope=bot&permissions=939879488"'/>
+    <router-view :invite-link='"https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands"'/>
   </div>
 </template>
 
