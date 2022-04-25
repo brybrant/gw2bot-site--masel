@@ -14,7 +14,7 @@
 }
 .feature-image {
   position: relative;
-  padding: ($baseline-px * 5) 0;
+  padding: ($baseline-px * 6) 0;
   background: url("/static/img/feature-images/feature-image-1.jpg") no-repeat 50% 50%;
   background-size: cover;
   &:before {
