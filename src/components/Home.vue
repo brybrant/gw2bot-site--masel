@@ -4,7 +4,7 @@
       <span class="close-button" title="Dismiss" v-on:click="closeAlert">&times;</span>
       A major update is now live along with Patreon!
     </div>
-    <div class="feature-image">
+    <div class="feature-image" :class="month">
       <div class="page-width">
         <h1 class="feature-title">Bring The World of Tyria Into&nbsp;Discord</h1>
         <a class="feature-button button button--giant button--gw2" :href="inviteLink" target="_blank">Add To Your Server!</a>
@@ -43,7 +43,8 @@ export default {
   },
   data() {
     return {
-      alert: document.cookie
+      alert: document.cookie,
+      month: ((new Date()).toLocaleString('default',{ month:'long'})).toLowerCase()
     };
   }
 };
