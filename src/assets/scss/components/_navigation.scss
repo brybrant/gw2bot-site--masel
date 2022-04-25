@@ -1,0 +1,44 @@
+/*---------------------------------------------------------------------------*\
+    Navigation
+\*---------------------------------------------------------------------------*/
+.main-nav {
+  position: sticky;
+  top: 0;
+  height: $nav-height;
+  text-align: center;
+  background: $white;
+  z-index: 1020;
+  a {
+    display: inline-block;
+    font-size: $nav-font-rem;
+    line-height: $baseline-px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $grey-dark;
+    padding: $nav-item-padding ($baseline-px * .5);
+    &:hover {
+      color: $red-deep;
+    }
+    &.active {
+      color: $black;
+    }
+  }
+  &:before {
+    @extend %psuedo-element;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    height: 1px;
+    background: url("/static/img/nav-top.jpg") no-repeat 50% 0%;
+  }
+  &:after {
+    @extend %psuedo-element;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 48px;
+    background: url("/static/img/nav-shadow.png") no-repeat 50% 0%;
+  }
+}

@@ -1,0 +1,28 @@
+/*---------------------------------------------------------------------------*\
+    Footer
+\*---------------------------------------------------------------------------*/
+footer {
+  position: relative;
+  margin: 190px 0 0 0;
+  padding: 24px 0 48px 0;
+  text-align: center;
+  width: 100%;
+  background: $black;
+  color: $white;
+  &:before {
+    @extend %psuedo-element;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    height: 190px;
+    background: url("/static/img/footer-edge.png") repeat-x 50% 100%;
+  }
+  a {
+    text-decoration: none;
+    color: $red-medium;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

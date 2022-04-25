@@ -1,0 +1,10 @@
+/*---------------------------------------------------------------------------*\
+    Horizontal Rules
+\*---------------------------------------------------------------------------*/
+hr {
+  position: relative;
+  margin: ($baseline-px - 1px) 0 0 0;
+  border: 0;
+  height: 1px;
+  background: url("/static/img/hr.png") no-repeat 50% 0;
+}

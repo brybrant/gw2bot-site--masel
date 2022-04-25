@@ -1,0 +1,42 @@
+/*---------------------------------------------------------------------------*\
+    Feature Section
+\*---------------------------------------------------------------------------*/
+.feature-section {
+  padding: ($baseline-px * 3) 0 0 0;
+  min-height: $header-height;
+  background: url("/static/img/feature-background.jpg") repeat-x 50% 0;
+  text-shadow: 0 (-1px) 1px $white;
+  code {
+    background: $white;
+    box-shadow: 0 0 1px rgba($black,.2),
+                0 1px 2px rgba($black,.1);
+  }
+}
+.feature-image {
+  position: relative;
+  padding: ($baseline-px * 5) 0;
+  background: url("/static/img/feature-images/feature-image-1.jpg") no-repeat 50% 50%;
+  background-size: cover;
+  &:before {
+    @extend %psuedo-element;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba($black,.25);
+  }
+}
+.feature-title {
+  color: $white;
+  text-shadow: 0 1px 1px $black,
+               0 0 12px $black,
+               0 0 24px $black,
+               0 0 48px $black;
+}
+.feature-button {
+  margin: 60px 0 0 0;
+  box-shadow: 0 2px 4px rgba($black,.15),
+              0 4px 8px rgba($black,.3),
+              0 8px 16px rgba($black,.6);
+}

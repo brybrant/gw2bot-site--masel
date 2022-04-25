@@ -1,0 +1,134 @@
+@use 'sass:color';
+/*---------------------------------------------------------------------------*\
+    Button Container
+\*---------------------------------------------------------------------------*/
+.button-container {
+  padding: $gutter-rem $gutter-px ($gutter-rem * .5) ($gutter-px * .5);
+  text-align: center;
+  & > .button, & > .psuedo-button {
+    margin: 0 0 ($gutter-rem * .5) ($gutter-px * .5);
+  }
+}
+
+/*---------------------------------------------------------------------------*\
+    Buttons Global
+\*---------------------------------------------------------------------------*/
+.button {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 6px 18px;
+  width: auto;
+  background: $red-deep;
+  border: 0;
+  text-decoration: none;
+  vertical-align: top;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  color: $white;
+  cursor: hand;
+  cursor: pointer;
+  font-size: $p-font-rem;
+  line-height: $p-line-rem;
+  outline: 0;
+  &:hover {
+    background: $red-medium;
+  }
+  &:active {
+    padding: 7px 18px 5px 18px;
+    background: $red-dark;
+    color: $white-grey;
+  }
+  img {
+    display: inline-block;
+    margin: 0 8px 0 (-8px);
+    width: $p-font-rem;
+    height: $p-font-rem;
+    vertical-align: top;
+    pointer-events: none;
+  }
+}
+.psuedo-button {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*---------------------------------------------------------------------------*\
+    Button Sizes
+\*---------------------------------------------------------------------------*/
+// Tiny Button
+.button.button--tiny {  padding: 2px 5px;
+  &:active {            padding: 3px 5px 1px 5px;}
+}
+// Small Button
+.button.button--small { padding: 4px 10px;
+  &:active {            padding: 5px 10px 3px 10px;}
+}
+// Large Button
+.button.button--large { padding: 12px 24px;
+  &:active {            padding: 13px 24px 11px 24px;}
+  font-size: $h5-font-rem;
+  line-height: $h5-line-rem;
+  img {
+    width: $h5-line-rem;
+    height: $h5-line-rem;
+  }
+}
+// Giant Button
+.button.button--giant { padding: 10px 28px;
+  &:active {            padding: 11px 28px 9px 28px;}
+  font-size: $h4-font-rem;
+  line-height: $h4-line-rem;
+  img {
+    width: $h4-line-rem;
+    height: $h4-line-rem;
+  }
+}
+
+.button.one-whole {
+  &, &:active, {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/*---------------------------------------------------------------------------*\
+    Button Styles
+\*---------------------------------------------------------------------------*/
+// GW2 Button
+.button--gw2 {
+  @extend %header-font-family;
+  border: 1px solid $grey-50;
+  background: $red-gradient;
+  text-shadow: 0 1px 1px $grey-dark;
+  &:hover {
+    background: $red-gradient--hover;
+  }
+  &:active {
+    background: $red-gradient--active;
+    text-shadow: 0 (-1px) 1px $black;
+  }
+}
+
+// Patreon Button
+.button--patreon {
+  background: color.scale($patreon-fiery-coral, $saturation: (-4%), $lightness: (-8%));
+  &:hover {
+    background: $patreon-fiery-coral;
+  }
+  &:active {
+    background: color.scale($patreon-fiery-coral, $saturation: (-25%), $lightness: (-20%));
+  }
+}
+
+// PayPal Button
+.button--paypal {
+  background: $paypal-pal-blue;
+  &:hover {
+    background: color.scale($paypal-pal-blue, $lightness: 12%);
+  }
+  &:active {
+    background: color.scale($paypal-pal-blue, $lightness: (-20%));
+  }
+}

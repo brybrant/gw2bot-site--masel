@@ -1,0 +1,22 @@
+/*---------------------------------------------------------------------------*\
+    Font Families
+\*---------------------------------------------------------------------------*/
+%header-font-family {
+  font-family: 'Cinzel',Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+}
+
+%body-font-family {
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+}
+
+%code-font-family {
+  font-family: monaco,Consolas,Lucida Console,monospace;
+}
+
+/*---------------------------------------------------------------------------*\
+    Initialize psuedo-elements
+\*---------------------------------------------------------------------------*/
+%psuedo-element {
+  content: '';
+  pointer-events: none;
+}

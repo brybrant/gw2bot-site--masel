@@ -1,0 +1,14 @@
+/*---------------------------------------------------------------------------*\
+    Index Page (Homepage)
+\*---------------------------------------------------------------------------*/
+#index {
+  .bot-demo {
+    position: relative;
+    margin: $baseline-rem 0;
+  }
+  .bot-demo-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

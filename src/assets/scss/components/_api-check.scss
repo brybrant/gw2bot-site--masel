@@ -1,0 +1,39 @@
+/*---------------------------------------------------------------------------*\
+    API Check
+\*---------------------------------------------------------------------------*/
+#api-status {
+  display: block;
+  margin: $h5-margin-rem 0 0 0;
+  padding: 2px 4px 2px 8px;
+  float: right;
+  color: $white;
+  font-size: $h5-font-rem;
+  line-height: $h5-line-rem;
+  font-weight: 700;
+  background: rgba($black,.5);
+  border: 1px solid currentColor;
+  box-shadow: 0 1px 2px rgba($black,.4),
+              0 2px 4px rgba($black,.2),
+              0 4px 8px rgba($black,.1);
+  &:after {
+    @extend %psuedo-element;
+    display: inline-block;
+    margin-left: 5px;
+    width: $h5-line-rem;
+    height: $h5-line-rem;
+    vertical-align: top;
+    background: url("/static/img/loading.svg") no-repeat 50% 50%/100% 100%;
+  }
+  &.success {
+    color: $green-highlight;
+    &:after {
+      background-image: url("/static/img/tick.svg");
+    }
+  }
+  &.failure {
+    color: $red-highlight;
+    &:after {
+      background-image: url("/static/img/cross.svg");
+    }
+  }
+}
