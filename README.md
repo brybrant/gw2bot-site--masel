@@ -10,8 +10,8 @@ This project uses [Flask](http://flask.pocoo.org/) for backend and [Vue.js](http
 
 ### Prerequisites
 
-- Download and install [Python](https://www.python.org/downloads/)
-- Download and install latest LTS version of [Node](https://nodejs.org/en/download/)
+- [Download and install Python](https://www.python.org/downloads/)
+- [Download and install latest LTS version of Node](https://nodejs.org/en/download/)
 - [Enable corepack to use yarn](https://yarnpkg.com/getting-started/install)
 
 ### Installation
