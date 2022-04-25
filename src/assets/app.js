@@ -1,16 +1,21 @@
-let request = new XMLHttpRequest();
+let request = new XMLHttpRequest(),
+    element = document.getElementById("api-status");
 request.open("GET", "https://api.guildwars2.com/v2/quaggans", true);
 
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-    document.querySelector("#apistatus").innerHTML = "API is Online! ☑";
-  } else {
-    document.querySelector("#apistatus").innerHTML = "Error reaching API ☒";
+request.onreadystatechange = function() {
+  if(request.readyState==4) {
+    if (request.status>=200&&request.status<400) {
+      element.innerHTML = "API is Online!";
+      element.className = "success";
+    } else {
+      element.innerHTML = "Error reaching API";
+      element.className = "failure";
+    }
   }
 };
 
-request.onerror = function() {
-  document.querySelector("#apistatus").innerHTML = "Error reaching API ☒";
-};
+/*request.onerror = function() {
+  element.innerHTML = "Error reaching API";
+};*/
 
 request.send();

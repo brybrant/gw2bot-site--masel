@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
   <!-- If IE use the latest rendering engine -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
@@ -27,43 +29,52 @@
 </head>
 
 <body>
-  <picture>
-    <source media="(min-width: 1024px)" srcset="/static/img/banner.png">
-    <img class="header-img" src="/static/img/avatarwithtext.png" alt="Banner with GW2Bot Logo">
-  </picture>
+  <header>
+    <picture>
+      <source media="(min-width: 1045px)" srcset="/static/img/banner.jpg">
+      <img src="/static/img/banner--mobile.jpg" alt="GW2Bot Logo">
+    </picture>
+    <div class="page-width page-padding">
+      <span class="sr-only">GW2Bot - A Discord Bot for Guild Wars 2</span>
+
+      <span id="api-status" title="If API is offline, the bot will not function properly">Checking API...</span>
+    </div>
+  </header>
 
   <div id="app"></div>
   <!-- built files will be auto injected -->
 
-  <p class="pusher"></p>
+  <div class="patreon">
+    <hr>
 
-  <div class="flex-wrapper">
-    <div id="patreon">
-      <a href="https://www.patreon.com/bePatron?u=9811418">
-        <img src="/static/img/patreon.png">
-      </a>
-    </div>
+    <div class="page-width page-padding">
+      <span class="h2">Keep GW2Bot Running</span>
 
-    <div id="paypal">
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="96N5SP5FYTTGJ">
-        <input type="image" src="/static/img/paypal.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="/static/img/paypal.png" width="1" height="1">
-      </form>
+      <p>GW2Bot will remain free to use, and runs on kind donations and volunteer contributions!</p>
+
+      <div class="button-container">
+        <a id="patreon" class="button button--large button--patreon" href="https://www.patreon.com/bePatron?u=9811418" target="_blank">
+          <img src="/static/img/patreon.svg">Become a Patron
+        </a>
+
+        <form id="paypal" class="psuedo-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="96N5SP5FYTTGJ">
+
+          <button class='button button--large button--paypal' name='submit' type='submit'>
+            <img src="/static/img/paypal.svg">Donate with PayPal
+          </button>
+
+          <img class="sr-only" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif">
+        </form>
+      </div>
     </div>
   </div>
 
-  <footer id="footer-lg">
-    <div class="container">
-      <p>©2022 - GW2Bot created by Maselkov#2365, Website created by Penemue#8514&nbsp;- &nbsp; If you want to contribute, see <a target="_blank" href="https://github.com/Maselkov/GW2Bot">here for the bot</a> and <a target="_blank" href="https://github.com/pen-mb/gw2bot-site">here for the website</a>. Thanks to all contributors.</p>
-      <p>Guild Wars 2 Logo and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation.</p>
-    </div>
-  </footer>
-
   <footer>
-    <div class="container">
-      <p><a target="_blank" href="https://github.com/Maselkov/GW2Bot">GW2Bot</a> by Maselkov#2365, <a target="_blank" href="https://github.com/pen-mb/gw2bot-site">Website</a> by Penemue#8514.</p>
+    <div class="page-width page-padding">
+      <p><small>&copy;2022&nbsp;-&nbsp;GW2Bot created by&nbsp;Maselkov#2365, Website created by&nbsp;Penemue#8514 and design updated by&nbsp;Mattt#7551</br>If you want to contribute, see <a href="https://github.com/Maselkov/GW2Bot" target="_blank">here for the bot</a> and <a href="https://github.com/pen-mb/gw2bot-site" target="_blank">here for the website</a>. Thanks to all contributors.</small></p>
+      <p><small>Guild Wars 2 Logo and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation.</small></p>
     </div>
   </footer>
 

@@ -1,6 +1,10 @@
 import Vue from "vue";
+import cmd from "../Cmd";
 
 export default {
+  components: {
+    cmd
+  },
   data() {
     return {
       commandsMainOne: {
@@ -310,14 +314,5 @@ export default {
         },
       }
     };
-  },
-  methods: {
-    toggleActive: function (event, command) {
-      if (command.active) {
-        command.active = false;
-      } else if (!command.active) {
-        Vue.set(command, "active", true);
-      }
-    }
   }
 };

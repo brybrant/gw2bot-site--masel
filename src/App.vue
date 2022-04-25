@@ -1,24 +1,16 @@
 <template>
   <div id="app">
-    <nav>
-      <ul>
-        <router-link to="/" active-class="active" exact>Home</router-link>
-        <router-link to="/commands" active-class="active">Commands</router-link>
-        <router-link to="/faq" active-class="active">F.A.Q</router-link>
-        <a href="https://discord.gg/VyQTrwP">Support</a>
-      </ul>
+    <nav class="main-nav" aria-label="Navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+      <router-link to="/" active-class="active" itemprop="url" exact>Home</router-link>
+      <router-link to="/commands" active-class="active" itemprop="url">Commands</router-link>
+      <router-link to="/faq" active-class="active" itemprop="url">F.A.Q</router-link>
+      <a href="https://discord.gg/VyQTrwP" target="_blank" itemprop="url">Support</a>
     </nav>
-    <p id="apicheck">
-      <span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
-    </p>
+
     <router-view :invite-link='"https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands"'/>
   </div>
 </template>
 
-<script src="./assets/app.js">
-</script>
+<script src="./assets/app.js"></script>
 
-<style src="./assets/style.scss" lang="scss">
-
-</style>
-
+<style src="./assets/scss/main.scss" lang="scss"></style>

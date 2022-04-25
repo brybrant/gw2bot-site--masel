@@ -1,166 +1,70 @@
 <template>
-  <div id="commands">
-    <hr>
-    <h1>The command prefix is <code>/</code></h1>
-    <small id="com-exp">Use commands with multiple options with a space in between: <code>/key add</code></small>
-    <hr>
-    <div class="wrapper">
-      <div class="col-1">
-        <ul class="list-group">
+  <main id="commands">
+    <div class="feature-section">
+      <div class="page-width page-padding">
+        <h1>GW2Bot Commands</h1>
+        <p><strong>Type <code>/</code> to see a full list of commands</strong></p>
+        <p>Use <code>&#11134; Tab</code> to autocomplete commands with options<!--: <code>/key add</code>--></p>
+      </div>
+    </div>
+    <div class="page-width page-padding">
+      <div class="flexbox">
+        <div class="commands-column">
+          <ul class="commands-list">
 
-          <li class="list-group-item border" v-for="command in commandsMainOne" :key="command.id">
-            <div v-if="!command.args">
-              <h3>{{ command.name }}</h3>
-              <small>{{ command.desc }}</small>
-            </div>
-            <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
-                {{ command.name }}
-              </button>
-              <small>{{ command.desc }}</small>
-              <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
-              :key="argName.id">
-                <hr>
-                <p>{{ argName }}</p>
-                <small>{{ argDesc }}</small>
-              </div>
-            </div>
-          </li>
+            <cmd v-for="command in commandsMainOne" :key="command.id" :command="command"/>
 
           </ul>
         </div>
-      <div class="col-2">
-        <ul class="list-group">
 
-          <li class="list-group-item border" v-for="command in commandsMainTwo" :key="command.id">
-            <div v-if="!command.args">
-              <h3>{{ command.name }}</h3>
-              <small>{{ command.desc }}</small>
-            </div>
-            <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
-                {{ command.name }}
-              </button>
-              <small>{{ command.desc }}</small>
-              <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
-              :key="argName.id">
-                <hr>
-                <p>{{ argName }}</p>
-                <small>{{ argDesc }}</small>
-              </div>
-            </div>
-          </li>
+        <div class="commands-column">
+          <ul class="commands-list">
 
-        </ul>
-      </div>
-    </div> <!-- Wrapper -->
-    <hr>
-    <h3>Notifiers</h3>
-    <hr>
-    <div class="wrapper">
-      <div class="col-1">
-        <ul class="list-group">
+            <cmd v-for="command in commandsMainTwo" :key="command.id" :command="command"/>
 
-          <li class="list-group-item border" v-for="command in commandsNotifiersOne" :key="command.id">
-            <div v-if="!command.args">
-              <h3>{{ command.name }}</h3>
-              <small>{{ command.desc }}</small>
-            </div>
-            <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
-                {{ command.name }}
-              </button>
-              <small>{{ command.desc }}</small>
-              <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
-              :key="argName.id">
-                <hr>
-                <p>{{ argName }}</p>
-                <small>{{ argDesc }}</small>
-              </div>
-            </div>
-          </li>
+          </ul>
+        </div>
+      </div> <!-- Wrapper -->
+      <hr>
+      <h2 class="h3">Notifiers</h2>
+      <hr>
+      <div class="flexbox">
+        <div class="commands-column">
+          <ul class="commands-list">
 
-        </ul>
-      </div>
-      <div class="col-2">
-        <ul class="list-group">
+            <cmd v-for="command in commandsNotifiersOne" :key="command.id" :command="command"/>
 
-          <li class="list-group-item border" v-for="command in commandsNotifiersTwo" :key="command.id">
-            <div v-if="!command.args">
-              <h3>{{ command.name }}</h3>
-              <small>{{ command.desc }}</small>
-            </div>
-            <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
-                {{ command.name }}
-              </button>
-              <small>{{ command.desc }}</small>
-              <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
-              :key="argName.id">
-                <hr>
-                <p>{{ argName }}</p>
-                <small>{{ argDesc }}</small>
-              </div>
-            </div>
-          </li>
+          </ul>
+        </div>
+        <div class="commands-column">
+          <ul class="commands-list">
 
-        </ul>
-      </div>
-    </div> <!-- Wrapper -->
-    <!--<hr>
-    <h3>Meta & Stats</h3>
-    <hr>
-    <div class="wrapper">
-      <div class="col-1">
-        <ul class="list-group">
+            <cmd v-for="command in commandsNotifiersTwo" :key="command.id" :command="command"/>
 
-          <li class="list-group-item border" v-for="command in commandsMetaOne" :key="command.id">
-            <div v-if="!command.args">
-              <h3>{{ command.name }}</h3>
-              <small>{{ command.desc }}</small>
-            </div>
-            <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
-                {{ command.name }}
-              </button>
-              <small>{{ command.desc }}</small>
-              <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
-              :key="argName.id">
-                <hr>
-                <p>{{ argName }}</p>
-                <small>{{ argDesc }}</small>
-              </div>
-            </div>
-          </li>
+          </ul>
+        </div>
+      </div> <!-- Wrapper -->
+      <!--<hr>
+      <h3>Meta & Stats</h3>
+      <hr>
+      <div class="flexbox">
+        <div class="commands-column">
+          <ul class="commands-list">
 
-        </ul>
-      </div>
-      <div class="col-2">
-        <ul class="list-group">
+            <cmd v-for="command in commandsMetaOne" :key="command.id" :command="command"/>
 
-          <li class="list-group-item border" v-for="command in commandsMetaTwo" :key="command.id">
-            <div v-if="!command.args">
-              <h3>{{ command.name }}</h3>
-              <small>{{ command.desc }}</small>
-            </div>
-            <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
-                {{ command.name }}
-              </button>
-              <small>{{ command.desc }}</small>
-              <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
-              :key="argName.id">
-                <hr>
-                <p>{{ argName }}</p>
-                <small>{{ argDesc }}</small>
-              </div>
-            </div>
-          </li>
+          </ul>
+        </div>
+        <div class="commands-column">
+          <ul class="commands-list">
 
-        </ul>
-      </div>
-    </div>-->
-  </div>
+            <cmd v-for="command in commandsMetaTwo" :key="command.id" :command="command"/>
+
+          </ul>
+        </div>
+      </div>-->
+    </div>
+  </main>
 </template>
 
 <script src="./commandsdata.js" scoped>
