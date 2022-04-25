@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       alert: document.cookie,
-      month: ((new Date()).toLocaleString('default',{ month:'long'})).toLowerCase()
+      month: ((new Date()).toLocaleString("default",{ month:"long"})).toLowerCase()
     };
   }
 };
