@@ -2,13 +2,15 @@
     Navigation
 \*---------------------------------------------------------------------------*/
 .main-nav {
+  position: relative;// Fallback for IE
   position: sticky;
   top: 0;
   height: $nav-height;
   text-align: center;
   background: $white;
-  z-index: 1020;
+  z-index: 1;
   a {
+    position: relative;
     display: inline-block;
     font-size: $nav-font-rem;
     line-height: $baseline-px;
@@ -21,6 +23,20 @@
     }
     &.active {
       color: $black;
+      &:after {
+        @extend %psuedo-element;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: (-12px);
+        width: 0;
+        height: 0;
+        border: 0 solid transparent;
+        border-top: 8px solid $white;
+        border-right-width: 12px;
+        border-left-width: 12px;
+        z-index: 1;
+      }
     }
   }
   &:before {
