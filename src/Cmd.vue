@@ -6,7 +6,7 @@
     </template>
     <template v-else>
       <h3 class="command-name">
-        <a @click="toggleActive($event, command)" :class="{active: command.active}"><span>{{ command.name }}</span></a>
+        <button @click="toggleActive($event, command)" :class="{active: command.active}"><span>{{ command.name }}</span></button>
       </h3>
       <p class="command-desc">{{ command.desc }}</p>
       <ul class="commands-list" v-show="command.active">

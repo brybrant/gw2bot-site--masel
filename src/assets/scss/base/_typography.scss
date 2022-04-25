@@ -10,6 +10,8 @@ body {
   text-align: center;
 }
 a {
+  // Remove the gray background on active links in IE 10.
+  background-color: transparent;
   text-decoration: underline;
   &:hover {
     text-decoration: none;
@@ -74,12 +76,11 @@ h6 {
   line-height: $p-line-rem;
   font-weight: 400;
 }*/
-p, li/*, figcaption, dl*/ {
+p, .paragraph, li/*, figcaption, dl*/ {
   @extend %body-font-family;
   margin: $p-margin-rem 0 0 0;
   font-size: $p-font-rem;
   line-height: $p-line-rem;
-  letter-spacing: 0;
 }
 small, .small-text {
   font-size: $small-font-rem;

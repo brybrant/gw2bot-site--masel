@@ -3,6 +3,7 @@ picture {
 }
 img {
   display: block;
+  border-style: none;// Remove the border on images inside links in IE 10.
   width: 100%;
   max-width: 100%;
 }

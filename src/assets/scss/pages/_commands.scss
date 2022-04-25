@@ -28,7 +28,7 @@
   color: $grey-dark;
   font-size: $h4-font-rem;
   line-height: ($baseline-px * 2);
-  a {
+  button {
     display: inline-block;
     margin: 4px 0;
     border: 1px solid $grey-dark;
@@ -54,11 +54,9 @@
       }
     }
   }
-  span {
-    &:before {
-      content: '\002F';// Forward slash
-      color: $grey-light;
-    }
+  span:before {
+    content: '\002F';// Forward slash
+    color: $grey-light;
   }
 }
 .command-desc {
