@@ -9,7 +9,7 @@
     </div>
     <div class="page-width page-padding">
       <div class="flexbox">
-        <div class="commands-column">
+        <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
             <cmd v-for="command in commandsMainOne" :key="command.id" :command="command"/>
@@ -17,7 +17,7 @@
           </ul>
         </div>
 
-        <div class="commands-column">
+        <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
             <cmd v-for="command in commandsMainTwo" :key="command.id" :command="command"/>
@@ -29,14 +29,14 @@
       <h2 class="h3">Notifiers</h2>
       <hr>
       <div class="flexbox">
-        <div class="commands-column">
+        <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
             <cmd v-for="command in commandsNotifiersOne" :key="command.id" :command="command"/>
 
           </ul>
         </div>
-        <div class="commands-column">
+        <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
             <cmd v-for="command in commandsNotifiersTwo" :key="command.id" :command="command"/>
@@ -48,14 +48,14 @@
       <h3>Meta & Stats</h3>
       <hr>
       <div class="flexbox">
-        <div class="commands-column">
+        <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
             <cmd v-for="command in commandsMetaOne" :key="command.id" :command="command"/>
 
           </ul>
         </div>
-        <div class="commands-column">
+        <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
             <cmd v-for="command in commandsMetaTwo" :key="command.id" :command="command"/>

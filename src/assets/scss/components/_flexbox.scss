@@ -6,7 +6,9 @@
   justify-content: center;
   flex-flow: row wrap;
   margin-left: (-$gutter-px);
-  & > * {
-    padding-left: $gutter-px;
-  }
+}
+.flexbox__item {
+  display: inline-block;
+  margin: 0;
+  padding-left: $gutter-px;
 }

@@ -9,9 +9,12 @@
 // 2. Set the global `box-sizing` state to `border-box`.
 // 3. Prevent adjustments of font size after orientation changes in iOS.
 html {
+  @extend %body-font-family;
   min-height: 100%; /* [1] */
   box-sizing: border-box; /* [2] */
   -webkit-text-size-adjust: 100%; /* [3] */
+  font-size: 100%;
+  line-height: $p-line-rem;
 }
 *, *:before, *:after {
   box-sizing: inherit; /* [2] */
@@ -20,6 +23,7 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
+  text-align: center;
   overflow-x: hidden;
 }
 main {
@@ -45,6 +49,9 @@ main {
 
 .patreon {
   padding-top: $baseline-rem;
+  .flexbox {
+    padding: $baseline-rem 0;
+  }
 }
 
 .sr-only {
@@ -61,7 +68,6 @@ main {
 }
 
 a, button {
-  cursor: hand;
   cursor: pointer;
 }
 

@@ -1,22 +1,12 @@
 @use 'sass:color';
 /*---------------------------------------------------------------------------*\
-    Button Container
-\*---------------------------------------------------------------------------*/
-.button-container {
-  padding: $gutter-rem $gutter-px ($gutter-rem * .5) ($gutter-px * .5);
-  text-align: center;
-  & > .button, & > .psuedo-button {
-    margin: 0 0 ($gutter-rem * .5) ($gutter-px * .5);
-  }
-}
-
-/*---------------------------------------------------------------------------*\
     Buttons Global
 \*---------------------------------------------------------------------------*/
 button {// Taken from Normalise.css
   margin: 0;
   font-family: inherit;
   font-size: 100%;
+  color: inherit;
   overflow: visible;
   text-transform: none;
   -webkit-appearance: button;
@@ -42,7 +32,6 @@ button {// Taken from Normalise.css
   text-align: center;
   white-space: nowrap;
   color: $white;
-  cursor: hand;
   cursor: pointer;
   font-size: $p-font-rem;
   line-height: $p-line-rem;
@@ -64,22 +53,18 @@ button {// Taken from Normalise.css
     pointer-events: none;
   }
 }
-.psuedo-button {
-  display: inline-block;
-  vertical-align: top;
-}
 
 /*---------------------------------------------------------------------------*\
     Button Sizes
 \*---------------------------------------------------------------------------*/
 // Tiny Button
-.button.button--tiny {  padding: 2px 5px;
+/*.button.button--tiny {  padding: 2px 5px;
   &:active {            padding: 3px 5px 1px 5px;}
-}
+}*/
 // Small Button
-.button.button--small { padding: 4px 10px;
+/*.button.button--small { padding: 4px 10px;
   &:active {            padding: 5px 10px 3px 10px;}
-}
+}*/
 // Large Button
 .button.button--large { padding: 12px 24px;
   &:active {            padding: 13px 24px 11px 24px;}
@@ -98,13 +83,6 @@ button {// Taken from Normalise.css
   img {
     width: $h4-line-rem;
     height: $h4-line-rem;
-  }
-}
-
-.button.one-whole {
-  &, &:active, {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 

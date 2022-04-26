@@ -1,14 +1,6 @@
 /*---------------------------------------------------------------------------*\
     Typography
 \*---------------------------------------------------------------------------*/
-html {
-  @extend %body-font-family;
-  font-size: 100%;
-  line-height: $p-line-rem;
-}
-body {
-  text-align: center;
-}
 a {
   // Remove the gray background on active links in IE 10.
   background-color: transparent;
@@ -92,16 +84,17 @@ small, .small-text {
 ul, ol {
   margin: 0;
   padding: 0 0 0 $gutter-px;
+  text-align: left;
   list-style-position: outside;
   li {
     counter-increment: listCounter;
     & ~ li {
-      margin: $baseline-rem 0 0 0;
+      margin: ($baseline-rem * .5) 0 0 0;
     }
   }
-  ul li, ol li {
+  /*ul li, ol li {
     counter-increment: listCounter2;
-  }
+  }*/
 }
 li {
   width: 100%;
