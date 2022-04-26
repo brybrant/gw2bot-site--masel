@@ -15,9 +15,12 @@
 
       <div class="bot-demo">
         <picture>
-          <source media="(min-width: 801px)" srcset="/static/img/demo.gif">
-          <source media="(min-width: 601px)" srcset="/static/img/demo--tablet.gif">
-          <img src="/static/img/demo--mobile.gif" alt="A .gif demonstration of the bot" loading="lazy">
+          <source media="(min-width: 801px)" srcset="/static/img/demo.webp" type="image/webp">
+          <source media="(min-width: 801px)" srcset="/static/img/demo.gif" type="image/gif">
+          <source media="(min-width: 601px)" srcset="/static/img/demo--tablet.webp" type="image/webp">
+          <source media="(min-width: 601px)" srcset="/static/img/demo--tablet.gif" type="image/gif">
+          <source media="(min-width: 1px)" srcset="/static/img/demo--mobile.webp" type="image/webp">
+          <img src="/static/img/demo--mobile.gif" alt="A demonstration of GW2Bot" loading="lazy">
         </picture>
 
         <picture>
