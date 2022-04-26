@@ -21,6 +21,9 @@
   hr {
     margin: (($baseline-px * .5) - 1px) 0 ($baseline-px * .5) 0;
   }
+  & ~ .commands-list__item {
+    margin-top: $baseline-rem;
+  }
 }
 
 .command-name {
@@ -29,6 +32,7 @@
   color: $grey-dark;
   font-size: $h4-font-rem;
   line-height: ($baseline-px * 2);
+  font-weight: 400;
   button {
     display: inline-block;
     margin: 4px 0;
@@ -71,4 +75,6 @@
 }
 .command-argument-name {
   @extend %code-font-family;
+  color: $grey-dark;
+  font-weight: 700;
 }
