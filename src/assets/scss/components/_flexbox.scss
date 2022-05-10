@@ -4,6 +4,7 @@
 .flexbox {
   display: flex;
   justify-content: center;
+  align-content: flex-start;
   flex-flow: row wrap;
   margin-left: (-$gutter-px);
 }
