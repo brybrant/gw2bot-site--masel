@@ -2,18 +2,7 @@
     FAQ Page
 \*---------------------------------------------------------------------------*/
 #faq {
-  h1 {
-    @include media-query('gt-mobile') {
-      margin: $h1-margin-rem 0 0 0;
-    }
-  }
   hr {
     margin-top: (($baseline-px * 2) - 1px);
-  }
-  a {
-    color: $red-deep;
-    &:hover {
-      color: $red-medium;
-    }
   }
 }
