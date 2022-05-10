@@ -1,0 +1,42 @@
+/*---------------------------------------------------------------------------*\
+    Tooltips
+\*---------------------------------------------------------------------------*/
+.tooltip {
+  position: absolute;
+  bottom: calc(100% - 2px);
+  padding: 6px 12px;
+  border: 1px solid $grey-700;
+  border-radius: 12px;
+  background: $white;
+  box-shadow: $tooltip-shadow;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: opacity .15s ease-in, visibility 0s linear .15s;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .15s ease-out;
+  }
+  &:before, &:after {
+    @extend %psuedo-element;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-bottom: 0;
+    width: 0;
+    height: 0;
+  }
+  &:before {
+    margin-left: (-10px);
+    border-top: 10px solid $grey-700;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+  }
+  &:after {
+    margin-left: (-8px);
+    border-top: 8px solid $white;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+  }
+}
