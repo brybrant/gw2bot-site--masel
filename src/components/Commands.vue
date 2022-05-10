@@ -1,10 +1,12 @@
 <template>
   <main id="commands">
-    <div class="feature-section">
-      <div class="page-width page-padding">
-        <h1>GW2Bot Commands</h1>
-        <h2 class="paragraph">Type <code>/</code> to see a full list of commands</h2>
-        <p>Use <code>&#11134; Tab</code> to autocomplete commands with options<!--: <code>/key add</code>--></p>
+    <div class="feature-section vertical-align vertical-align--middle">
+      <div class="vertical-align__content">
+        <div class="page-width page-padding">
+          <h1>GW2Bot Commands</h1>
+          <h2 class="paragraph">Type <code>/</code> to see a full list of commands</h2>
+          <p>Use <code>&#11134; Tab</code> to autocomplete commands with options<!--: <code>/key add</code>--></p>
+        </div>
       </div>
     </div>
     <div class="page-width page-padding">
@@ -12,53 +14,50 @@
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
-            <cmd v-for="command in commandsMainOne" :key="command.id" :command="command"/>
+            <cmd v-for="command in columnOne(commandsMain)" :key="command.id" :command="command"/>
 
           </ul>
         </div>
-
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
-            <cmd v-for="command in commandsMainTwo" :key="command.id" :command="command"/>
+            <cmd v-for="command in columnTwo(commandsMain)" :key="command.id" :command="command"/>
 
           </ul>
         </div>
-      </div> <!-- Wrapper -->
+      </div>
       <hr>
       <h2 class="h3">Notifiers</h2>
-      <hr>
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
-            <cmd v-for="command in commandsNotifiersOne" :key="command.id" :command="command"/>
+            <cmd v-for="command in columnOne(commandsNotifiers)" :key="command.id" :command="command"/>
 
           </ul>
         </div>
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
-            <cmd v-for="command in commandsNotifiersTwo" :key="command.id" :command="command"/>
+            <cmd v-for="command in columnTwo(commandsNotifiers)" :key="command.id" :command="command"/>
 
           </ul>
         </div>
-      </div> <!-- Wrapper -->
+      </div>
       <!--<hr>
-      <h3>Meta & Stats</h3>
-      <hr>
+      <h2 class="h3">Meta &amp; Stats</h3>
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
-            <cmd v-for="command in commandsMetaOne" :key="command.id" :command="command"/>
+            <cmd v-for="command in columnOne(commandsMeta)" :key="command.id" :command="command"/>
 
           </ul>
         </div>
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
 
-            <cmd v-for="command in commandsMetaTwo" :key="command.id" :command="command"/>
+            <cmd v-for="command in columnTwo(commandsMeta)" :key="command.id" :command="command"/>
 
           </ul>
         </div>

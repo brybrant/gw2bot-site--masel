@@ -7,239 +7,776 @@ export default {
   },
   data() {
     return {
-      commandsMainOne: {
-        account: {
+      commandsMain: [
+        {
           name: "account",
           desc: "Information about your account"
         },
-        achievementinfo: {
+        {
           name: "achievement",
-          desc: "Display achievement information and your completion status"
+          desc: "Display achievement information and your completion status",
+          args: [
+            {
+              name: "achievement",
+              desc: "Name of achievement. Example: Playing Chicken",
+              required: true
+            }
+          ]
         },
-        bosses: {
+        {
           name: "bosses",
           desc: "Shows your raid progression for the week"
         },
-        cats: {
+        {
           name: "cats",
           desc: "Displays cats you have not collected yet"
         },
-        /*changelog: {
+        /*{
           name: "changelog",
           desc: "List of recent changes to the bot"
         },*/
-        character: {
+        {
           name: "character",
           desc: "Character related commands",
-          args: {
-            //attributes: "Lists attributes of given character",
-            birthdays: "Lists days until each of your character's birthdays",
-            crafting: "Displays your characters and their crafting level",
-            fashion: "Displays the skins and dyes of a given character",
-            gear: "Displays the gear and build of a given character",
-            info: "Info about a given character",
-            list: "Lists all your characters with extra information",
-            //pvpbuild: "Displays the build of given character",
-            //togglepublic: "Toggle your character's status to public",
-            //wvwbuild: "Displays the build of given character"
-          }
+          subcommands: [
+            /*{
+              name: "attributes",
+              desc: "Lists attributes of given character"
+            },*/
+            {
+              name: "birthdays",
+              desc: "Lists days until each of your character's birthdays"
+            },
+            {
+              name: "crafting",
+              desc: "Displays your characters and their crafting level"
+            },
+            {
+              name: "fashion",
+              desc: "Displays the skins and dyes of a given character",
+              args: [
+                {
+                  name: "character",
+                  desc: "Character name to inspect. Skip to get a list instead"
+                }
+              ]
+            },
+            {
+              name: "gear",
+              desc: "Displays the gear and build of a given character",
+              args: [
+                {
+                  name: "character",
+                  desc: "Character name to inspect. Skip to get a list instead"
+                }
+              ]
+            },
+            {
+              name: "info",
+              desc: "Info about a given character",
+              args: [
+                {
+                  name: "character",
+                  desc: "Character name to inspect. Skip to get a list instead"
+                }
+              ]
+            },
+            {
+              name: "list",
+              desc: "Lists all your characters with extra information",
+              args: [
+                {
+                  name: "info",
+                  desc: "Select additional information to display",
+                  options: [
+                    "Age",
+                    "Time played"
+                  ]
+                }
+              ]
+            },
+            /*{
+              name: "pvpbuild",
+              desc: "Displays the build of given character"
+            },*/
+            /*{
+              name: "togglepublic",
+              desc: "Toggle your character's status to public"
+            },*/
+            /*{
+              name: "wvwbuild",
+              desc: "Displays the build of given character"
+            }*/
+          ]
         },
-        chatcode: {
+        {
           name: "chatcode",
-          desc: "Generate a chat code"
+          desc: "Generate a chat code",
+          args: [
+            {
+              name: "item",
+              desc: "Base item name for the chat code. Example: Banana",
+              required: true
+            },
+            {
+              name: "quantity",
+              desc: "Item quantity, ranging from 1 to 255",
+              required: true
+            },
+            {
+              name: "skin",
+              desc: "Skin name to apply on the item"
+            },
+            {
+              name: "upgrade_1",
+              desc: "Name of the upgrade in the first slot. Example: Mark of Penetration"
+            },
+            {
+              name: "upgrade_2",
+              desc: "Name of the upgrade in the second slot. Example: Superior Rune of Generosity"
+            }
+          ]
         },
-        daily: {
+        {
           name: "daily",
           desc: "Commands showing daily things",
-          args: {
-            "All dailies": "Show today's all dailies",
-            Fractals: "Show today's all fractal dailies",
-            PSNA: "Show today's Pact Supply Network Agent locations",
-            PvE: "Show today's PvE dailies",
-            PvP: "Show today's PvP dailies",
-            Strikes: "Show today's Strike dailies",
-            WvW: "Show today's WvW dailies"
-          }
+          args: [
+            {
+              name: "category",
+              desc: "Daily type",
+              required: true,
+              options: [
+                "All dailies",
+                "Fractals",
+                "PSNA - Pact Supply Network Agent",
+                "PvE",
+                "PvP",
+                "Strikes",
+                "WvW"
+              ]
+            },
+            {
+              name: "tomorrow",
+              desc: "Select this option to view tomorrow's dailies instead"
+            }
+          ]
         },
-        /*dulfy: {
+        /*{
           name: "dulfy",
           desc: "Search dulfy.net"
         },*/
-        et: {
+        {
           name: "et",
           desc: "The event timer",
-          args: {
-            "Day/night cycle": "Current day/night cycle",
-            "HoT - Heart of Thorns": "Event timer for HoT maps and Dry Top",
-            "PoF - Path of Fire": "Event timer for PoF and LS4 maps",
-            "World bosses": "Upcoming world bosses"
-          }
+          args: [
+            {
+              name: "category",
+              desc: "Event timer category",
+              required: true,
+              options: [
+                "Day/night cycle",
+                "HoT - Heart of Thorns",
+                "PoF - Path of Fire",
+                "World bosses"
+              ]
+            }
+          ]
         },
-        evtc: {
+        {
           name: "evtc",
           desc: "Commands related to arcdps log files",
-          args: {
-            api_key: "Generate an API key for third-party apps that automatically upload EVTC logs",
-            "autopost add_destination": "Adds the current Discord channel as a destination to autopost EVTC logs",
-            "autopost remove_destinations": "Removes all Discord channels as autopost destinations",
-            channel: "Sets the current Discord channel to automatically process EVTC logs"
-          }
+          subcommands: [
+            {
+              name: "api_key",
+              desc: "Generate an API key for third-party apps that automatically upload EVTC logs",
+              args: [
+                {
+                  name: "operation",
+                  desc: "The operation to perform",
+                  required: true,
+                  options: [
+                    "Delete your API key",
+                    "Generate or regenerate your API key",
+                    "View your API key"
+                  ]
+                }
+              ]
+            },
+            {
+              name: "autopost add_destination",
+              desc: "Adds the current Discord channel as a destination to autopost EVTC logs to"
+            },
+            {
+              name: "autopost remove_destinations",
+              desc: "Removes all Discord channels from the list of autopost destinations"
+            },
+            {
+              name: "channel",
+              desc: "Sets the current Discord channel to automatically process EVTC logs",
+              args: [
+                {
+                  name: "channel",
+                  desc: "The channel to enable automatic EVTC processing on",
+                  required: true
+                },
+                {
+                  name: "autodelete",
+                  desc: "Automatically delete message after processing the EVTC log",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ]
         },
-        gem: {
+        {
           name: "gem",
           desc: "Commands related to gems",
-          args: {
-            price: "Lists current gold/gem exchange prices",
-            track: "Recive a notification when cost of 400 gems drops below the specified cost"
-          }
+          subcommands: [
+            {
+              name: "price",
+              desc: "Lists current gold/gem exchange prices",
+              args: [
+                {
+                  name: "quantity",
+                  desc: "The number of gems to evaluate (default is 400)"
+                }
+              ]
+            },
+            {
+              name: "track",
+              desc: "Recive a notification when cost of 400 gems drops below the specified cost",
+              args: [
+                {
+                  name: "gold",
+                  desc: "Recieve a notification when price of 400 gems drops below the specified amount",
+                  required: true
+                }
+              ]
+            }
+          ]
         },
-        guild: {
+        {
           name: "guild",
           desc: "Guild related commands",
-          args: {
-            default: "Set your preferred guild for guild commands on current Discord Server",
-            info: "Information about general guild stats",
-            log: "Get log of last 20 entries of stash/treasury/members",
-            members: "Get list of all members and their ranks",
-            treasury: "Get list of current and needed items for upgrades"
-          }
+          subcommands: [
+            {
+              name: "default",
+              desc: "Set your default guild for guild commands on the current Discord Server",
+              args: [
+                {
+                  name: "guild_name",
+                  desc: "Guild name. Leave blank to reset"
+                }
+              ]
+            },
+            {
+              name: "info",
+              desc: "General guild stats",
+              args: [
+                {
+                  name: "guild_name",
+                  desc: "Guild name. Can be blank if the server has a default guild. Required otherwise"
+                }
+              ]
+            },
+            {
+              name: "log",
+              desc: "Get log of last 20 entries of stash/treasury/members",
+              args: [
+                {
+                  name: "log_type",
+                  desc: "Select the type of log to inspect",
+                  required: true,
+                  options: [
+                    "Roster",
+                    "Stash",
+                    "Treasury"
+                  ]
+                },
+                {
+                  name: "guild_name",
+                  desc: "Guild name. Can be blank if this server has a default guild. Required otherwise"
+                }
+              ]
+            },
+            {
+              name: "members",
+              desc: "Shows a list of members and their ranks",
+              args: [
+                {
+                  name: "guild_name",
+                  desc: "Guild name. Can be blank if this server has a default guild. Required otherwise"
+                }
+              ]
+            },
+            {
+              name: "treasury",
+              desc: "Get list of current and needed items for upgrades",
+              args: [
+                {
+                  name: "guild_name",
+                  desc: "Guild name. Can be blank if this server has a default guild. Required otherwise"
+                }
+              ]
+            }
+          ]
         },
-        guildsync: {
+        {
           name: "guildsync",
-          desc: "Guild synchronization related commands",
-          args: {
-            add: "Add a new guildsync (max 10)",
-            //clear: "Wipes settings and created roles and turns sync off",
-            edit: "Edit or delete existing guildsyncs",
-            //guildrole: "Adds a new role based on the guild tag for channel management",
-            //now: "Force a synchronization, also deletes or creates new ranks as needed",
-            purge: "Toggle kicking of users that are not in any of the synced guilds",
-            //setup: "Setup process for ingame roster to Discord member list synchronization",
-            toggle: "Toggles synchronization on/off - does not wipe settings"
-          }
-        }
-      },
-      commandsMainTwo: {
-        key: {
+          desc: "Guild synchronization related commands: sync your in-game guild ranks with Discord roles",
+          subcommands: [
+            {
+              name: "add",
+              desc: "Add a new guildsync (max 10)",
+              args: [
+                {
+                  name: "guild_name",
+                  desc: "The guild name of the guild you wish to sync with",
+                  required: true
+                },
+                {
+                  name: "sync_type",
+                  desc: "Select how you want the synced roles to behave",
+                  required: true,
+                  options: [
+                    "Give every member of your guild a single, guild specific role",
+                    "Sync both the ranks, and give every member a guild specific role",
+                    "Sync only the in-game ranks"
+                  ]
+                },
+                {
+                  name: "authentication_method",
+                  desc: "Select how you want to authenticate the leadership of the guild",
+                  required: true,
+                  options: [
+                    "Enter a key. If selected, fill out the <code>api_key</code> argument",
+                    "Have the bot prompt another user for authorization. If selected, fill out <code>user_to_prompt</code> argument",
+                    "Use your own currently active API key. You need to be the guild leader"
+                  ]
+                },
+                {
+                  name: "api_key",
+                  desc: "The API key to use for authorization. Use only if you've selected it as the <code>authentication_method</code>"
+                },
+                {
+                  name: "user_to_prompt",
+                  desc: "The user to prompt for authorization. Use only if you've selected it as the <code>authentication_method</code>"
+                }
+              ]
+            },
+            /*{
+              name: "clear",
+              desc: "Wipes settings and created roles and turns sync off"
+            },*/
+            {
+              name: "edit",
+              desc: "Edit or delete existing guildsyncs",
+              args: [
+                {
+                  name: "operation",
+                  desc: "Select the operation. You will be prompted to select the sync after the command",
+                  required: true,
+                  options: [
+                    "Change API key. Make sure to fill out the api_key optional argument",
+                    "Delete a guildsync",
+                    "Toggle guild role. If disabled, this will delete the role created by the bot",
+                    "Toggle syncing ranks. If disabled, this will delete the role created by the bot"
+                  ]
+                },
+                {
+                  name: "api_key",
+                  desc: "The API key to use for authorization. Use only if you've selected it as the <code>authentication_method</code>"
+                }
+              ]
+            },
+            /*{
+              name: "guildrole",
+              desc: "Adds a new role based on the guild tag for channel management"
+            },*/
+            /*{
+              name: "now",
+              desc: "Force a synchronization, also deletes or creates new ranks as needed"
+            },*/
+            {
+              name: "purge",
+              desc: "Toggle kicking of users that are not in any of the synced guilds",
+              args: [
+                {
+                  name: "enabled",
+                  desc: "Enable or disable purge. You'll be asked to confirm your selection afterwards",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                }
+              ]
+            },
+            /*{
+              name: "setup",
+              desc: "Setup process for ingame roster to Discord member list synchronization"
+            },*/
+            {
+              name: "toggle",
+              desc: "Global toggle for guildsync - does not wipe the settings",
+              args: [
+                {
+                  name: "enabled",
+                  desc: "Enable or disable guildsync for the current server",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           name: "key",
           desc: "Commands related to API keys",
-          args: {
-            add: "Adds your API key and associates it with your Discord account",
-            info: "Information about your current API key",
-            remove: "Removes your current API key from your list of stored API keys",
-            switch: "Swaps between your stored API keys"
-          }
+          subcommands: [
+            {
+              name: "add",
+              desc: "Adds your API key and associates it with your Discord account",
+              args: [
+                {
+                  name: "key",
+                  desc: "Generate at <a href='https://account.arena.net' target='_blank'>https://account.arena.net</a> under Applications tab",
+                  required: true
+                }
+              ]
+            },
+            {
+              name: "info",
+              desc: "Information about your current API key"
+            },
+            {
+              name: "remove",
+              desc: "Remove selected keys from the bot"
+            },
+            {
+              name: "switch",
+              desc: "Swaps between your stored API keys",
+              args: [
+                {
+                  name: "index",
+                  desc: "Key index to switch to. Skip to get a list instead"
+                }
+              ]
+            }
+          ]
         },
-        li: {
+        {
+          name: "kp",
+          desc: "Shows completed raids and fractals"
+        },
+        {
           name: "li",
           desc: "Shows how many Legendary Insights and Divinations you have earned"
         },
-        nodes: {
+        {
           name: "nodes",
           desc: "Displays the home instance nodes you have not yet unlocked (Requires \"progression\" permission)"
         },
-        /*prefix: {
+        /*{
           name: "prefix",
           desc: "Set bot's prefixes for this server"
         },*/
-        pvp: {
+        {
           name: "pvp",
           desc: "Commands related to PvP",
-          args: {
-            professions: "Information about your PvP profession stats",
-            stats: "Information about your general PvP stats"
-          }
+          subcommands: [
+            {
+              name: "professions",
+              desc: "Information about your PvP profession stats",
+              args: [
+                {
+                  name: "profession",
+                  desc: "Select a profession to view specific statistics",
+                  options: [
+                    "Warrior",
+                    "Guardian",
+                    "Revenant",
+                    "Thief",
+                    "Ranger",
+                    "Engineer",
+                    "Elementalist",
+                    "Necromancer",
+                    "Mesmer"
+                  ]
+                }
+              ]
+            },
+            {
+              name: "stats",
+              desc: "Information about your general PvP stats"
+            }
+          ]
         },
-        sab: {
+        {
           name: "sab",
           desc: "Commands related to Super Adventure Box",
-          args: {
-            unlocks: "Displays missing SAB unlocks for specified character",
-            zones: "Displays missing SAB zones for specified character"
-          }
+          subcommands: [
+            {
+              name: "unlocks",
+              desc: "Displays missing SAB unlocks for specified character",
+              args: [
+                {
+                  name: "character",
+                  desc: "Displays missing SAB unlocks for specified character",
+                  required: true
+                }
+              ]
+            },
+            {
+              name: "zones",
+              desc: "Displays missing SAB zones for specified character",
+              args: [
+                {
+                  name: "character",
+                  desc: "Displays missing SAB zones for specified character",
+                  required: true
+                }
+              ]
+            }
+          ]
         },
-        search: {
+        {
           name: "search",
-          desc: "Search your account for items"
+          desc: "Search your account for items",
+          args: [
+            {
+              name: "item",
+              desc: "Specify the name of an item to search for",
+              required: true
+            }
+          ]
         },
-        server: {
+        {
           name: "server",
           desc: "Commands for server management",
-          args: {
-            force_account_names: "Automatically change nicknames to in-game names",
-            preview_chat_links: "Enable or disable automatic GW2 chat link preview from Discord messages",
-            sync: "Force a sync for any guildsyncs and worldsyncs you have",
-            //timezone: "Change the timezone bot will use in this server"
-          }
+          subcommands: [
+            {
+              name: "force_account_names",
+              desc: "Automatically change nicknames to in-game names",
+              args: [
+                {
+                  name: "enabled",
+                  desc: "Automatically change nicknames to in-game names",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                }
+              ]
+            },
+            {
+              name: "preview_chat_links",
+              desc: "Enable or disable automatic GW2 chat link preview from Discord messages",
+              args: [
+                {
+                  name: "enabled",
+                  desc: "Enable or disable automatic chat link preview",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                }
+              ]
+            },
+            {
+              name: "sync",
+              desc: "Force a sync for any guildsyncs and worldsyncs you have"
+            },
+            /*{
+              name: "timezone",
+              desc: "Change the timezone bot will use in this server"
+            }*/
+          ]
         },
-        skill: {
+        {
           name: "skill",
-          desc: "Information about a given skill"
+          desc: "Information about a given skill",
+          args: [
+            {
+              name: "skill",
+              desc: "The skill name to search for. Example: Meteor Shower",
+              required: true
+            }
+          ]
         },
-        tp: {
+        {
           name: "tp",
           desc: "Commands related to Trading Post",
-          args: {
-            buying: "Show current buying transactions",
-            //current: "Show current selling/buying transactions",
-            delivery: "Show your items awaiting in delivery box",
-            price: "Checks price of an item",
-            selling: "Show current selling transactions"
-          }
+          subcommands: [
+            {
+              name: "buying",
+              desc: "Show current buying transactions"
+            },
+            /*{
+              name: "current",
+              desc: "Show current selling/buying transactions"
+            },*/
+            {
+              name: "delivery",
+              desc: "Show your items awaiting in delivery box"
+            },
+            {
+              name: "price",
+              desc: "Checks price of an item",
+              args: [
+                {
+                  name: "item",
+                  desc: "Specify the name of an item to check the price of",
+                  required: true
+                }
+              ]
+            },
+            {
+              name: "selling",
+              desc: "Show current selling transactions"
+            }
+          ]
         },
-        trait: {
+        {
           name: "trait",
-          desc: "Information about a given trait"
+          desc: "Information about a given trait",
+          args: [
+            {
+              name: "trait",
+              desc: "The trait name to search for. Example: Brave Stride",
+              required: true
+            }
+          ]
         },
-        wallet: {
+        {
           name: "wallet",
           desc: "Info about all of your currencies",
-          args: {
-            //currencies: "Returns a list of all currencies",
-            currency: "Info about a specific currency (optional)",
-            //maps: "Shows map-specific currencies",
-            //show: "Shows most important currencies in your wallet",
-            //tokens: "Shows instance-specific currencies",
-          }
+          args: [
+            /*{
+              name: "currencies",
+              desc: "Returns a list of all currencies"
+            },*/
+            {
+              name: "currency",
+              desc: "The specific currency to search for. Leave blank for general overview"
+            },
+            /*{
+              name: "maps",
+              desc: "Shows map-specific currencies"
+            },*/
+            /*{
+              name: "show",
+              desc: "Shows most important currencies in your wallet"
+            },*/
+            /*{
+              name: "tokens",
+              desc: "Shows instance-specific currencies"
+            }*/
+          ]
         },
-        wiki: {
+        {
           name: "wiki",
-          desc: "Search the Guild Wars 2 wiki"
+          desc: "Search the Guild Wars 2 wiki",
+          args: [
+            {
+              name: "search_text",
+              desc: "The text to search the wiki for. Example: Lion's Arch",
+              required: true
+            },
+            {
+              name: "language",
+              desc: "The language of the wiki to search on",
+              options: [
+                "en",
+                "de",
+                "fr",
+                "es"
+              ]
+            }
+          ]
         },
-        worldsync: {
+        {
           name: "worldsync",
           desc: "World synchronization related commands",
-          args: {
-            ally_role: "Specify a role to be given to allies of the chosen world",
-            enabled: "Enable or disable worldsync",
-            world: "The world name to use for worldsync",
-            world_role: "Specify a role to be given to members of the chosen world"
-          }
+          args: [
+            {
+              name: "ally_role",
+              desc: "Specify a role to be given to allies of the chosen world"
+            },
+            {
+              name: "enabled",
+              desc: "Enable or disable worldsync",
+              required: true,
+              options: [
+                "False",
+                "True"
+              ]
+            },
+            {
+              name: "world",
+              desc: "The world name to use for worldsync"
+            },
+            {
+              name: "world_role",
+              desc: "Specify a role to be given to members of the chosen world"
+            }
+          ]
         },
-        wvw: {
+        {
           name: "wvw",
           desc: "Commands related to WvW",
-          args: {
-            info: "Info about a specified world. If no world is specified, defaults to account's world",
-            //worlds: "List all worlds",
-            poptrack: "Receive a notification when a specified world is no longer full",
-          }
-        }/*,
-        help: {
+          subcommands: [
+            {
+              name: "info",
+              desc: "Info about a world. Defaults to account's world",
+              args: [
+                {
+                  name: "world",
+                  desc: "World name. Leave blank to use your account's world"
+                }
+              ]
+            },
+            /*{
+              name: "worlds",
+              desc: "List all worlds"
+            },*/
+            {
+              name: "poptrack",
+              desc: "Receive a notification when a specified world is no longer full",
+              args: [
+                {
+                  name: "world",
+                  desc: "Specify the name of a World to track the population of",
+                  required: true
+                }
+              ]
+            }
+          ]
+        },
+        /*{
           name: "help",
           desc: "Shows the commands menu"
         }*/
-      },
-      commandsNotifiersOne: {
-        /*bossnotifier: {
+      ],
+      commandsNotifiers: [
+        /*{
           name: "bossnotifier",
           desc: "Sends the next two bosses every 15 minutes to a channel",
           args: {
             channel: "Sets the channel to send the bosses to",
             toggle: "Toggles posting upcoming bosses"
           }
-        },
-        dailynotifier: {
+        },*/
+        /*{
           name: "dailynotifier",
           desc: "Sends a list of dailies to specified channel",
           args: {
@@ -250,69 +787,183 @@ export default {
             categories: "Choose which categories to display on daily notifications"
           }
         },*/
-        event_reminder: {
+        {
           name: "event_reminder",
           desc: "For setting up notifications of upcoming events",
-          args: {
-            event_name: "Name of the event (must have a predetermined start time)",
-            minutes_before_event: "Number of minutes before the event to be notified"
-          }
-        }
-      },
-      commandsNotifiersTwo: {
-        /*newsfeed: {
+          args: [
+            {
+              name: "event_name",
+              desc: "Event name. Examples: Shadow Behemoth. Gerent Preparation"
+            },
+            {
+              name: "minutes_before_event",
+              desc: "The number of minutes before the event that you'll be notified at"
+            }
+          ]
+        },
+        /*{
           name: "newsfeed",
           desc: "For setting up automatic guildwars2.com news feed",
-          args: {
-            channel: "Sets the channel to send the news to",
-            toggle: "Toggles posting news"
-          }
+          args: [
+            {
+              name: "channel",
+              desc: "Sets the channel to send the news to"
+            },
+            {
+              name: "toggle",
+              desc: "Toggles posting news"
+            }
+          ]
         },*/
-        notifier: {
+        {
           name: "notifier",
           desc: "For setting up automatic notifications",
-          args: {
-            bosses: "Sends the next two bosses every 15 minutes to a channel",
-            daily: "Sends a list of dailies to a specified channel",
-            mystic_forger: "Get a personal reminder whenever \"Daily Mystic Forger\" becomes active",
-            news: "Automatically sends news from guildwars2.com to a specified channel",
-            update: "Send a notification whenever the game is updated"
-          }
-        }
-        /*updatenotifier: {
+          subcommands: [
+            {
+              name: "bosses",
+              desc: "Sends the next two bosses every 15 minutes to a channel",
+              args: [
+                {
+                  name: "channel",
+                  desc: "The channel to post to. Leave blank to disable, required otherwise"
+                },
+                {
+                  name: "edit",
+                  desc: "Edit the previous message instead of deleting it. If not, posts a new message. Defaults to False",
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                }
+              ]
+            },
+            {
+              name: "daily",
+              desc: "Send daily achievements to a channel every day",
+              args: [
+                {
+                  name: "channel",
+                  desc: "The channel to post to. Leave blank to disable, required otherwise"
+                },
+                {
+                  name: "pin_message",
+                  desc: "Toggle whether to automatically pin the daily message or not",
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                },
+                {
+                  name: "behavior",
+                  desc: "Select additional behavior for deleting/editing the message. Leave blank for standard behavior",
+                  options: [
+                    "Delete the previous day's message. Causes an unread notification",
+                    "Edit the previous day's message. No unread notification"
+                  ]
+                }
+              ]
+            },
+            {
+              name: "mystic_forger",
+              desc: "Get a personal reminder whenever \"Daily Mystic Forger\" becomes active. Get those Mystic Coins!",
+              args: [
+                {
+                  name: "reminder_frequency",
+                  desc: "Select when you want to be notified",
+                  required: true,
+                  options: [
+                    "Disable the Mystic Forger reminder",
+                    "Get a message about Mystic Forger when it becomes active",
+                    "Get a message about Mystic Forger when it becomes active AND 24 hours before that"
+                  ]
+                }
+              ]
+            },
+            {
+              name: "news",
+              desc: "Automatically sends news from guildwars2.com to a specified channel",
+              args: [
+                {
+                  name: "channel",
+                  desc: "The channel to post to. Leave blank to disable, required otherwise"
+                }
+              ]
+            },
+            {
+              name: "update",
+              desc: "Send a notification whenever the game is updated",
+              args: [
+                {
+                  name: "channel",
+                  desc: "The channel to post to. Leave blank to disable, required otherwise"
+                },
+                {
+                  name: "mention",
+                  desc: "The mention to ping when posting the notification. Can be a role, or everyone, or even a user"
+                }
+              ]
+            }
+          ]
+        },
+        /*{
           name: "updatenotifier",
           desc: "For setting up notifcations whenever the game updates",
-          args: {
-            channel: "Sets the channel to send the update announcement",
-            mention: "Change the type of mention to be included with update notifier",
-            toggle: "Toggles sending game update notifications"
-          }
+          args: [
+            {
+              name: "channel",
+              desc: "Sets the channel to send the update announcement"
+            },
+            {
+              name: "mention",
+              desc: "Change the type of mention to be included with update notifier"
+            },
+            {
+              name: "toggle",
+              desc: "Toggles sending game update notifications"
+            }
+          ]
         }*/
-      },
-      commandsMetaOne: {
-        info: {
+      ],
+      commandsMeta: [
+        {
           name: "info",
           desc: "Display bot's info"
         },
-        ping: {
+        {
           name: "ping",
           desc: "Pong!"
-        }
-      },
-      commandsMetaTwo: {
-        uptime: {
+        },
+        {
           name: "uptime",
           desc: "Display bot's uptime"
         },
-        stats: {
+        {
           name: "stats",
           desc: "Statistic related commands",
-          args: {
-            server: "Statistics of this server",
-            user: "Statistics of the user"
-          }
+          args: [
+            {
+              name: "server",
+              desc: "Statistics of this server"
+            },
+            {
+              name: "user",
+              desc: "Statistics of the user"
+            }
+          ]
         },
-      }
+      ]
     };
+  },
+  methods: {
+    columnOne(commands) {
+      return commands.filter(function(command,index) {
+        return index < Math.round(commands.length / 2);
+      });
+    },
+    columnTwo(commands) {
+      return commands.filter(function(command,index) {
+        return index >= Math.round(commands.length / 2);
+      });
+    }
   }
 };
