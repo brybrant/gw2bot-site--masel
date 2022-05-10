@@ -67,3 +67,17 @@
     @warn "Breakpoint ‘#{$media-query}’ does not exist";
   }
 }
+
+// TEXT STROKE
+// Puts '.5px' thick text shadow in all directions to look like outline
+@mixin text-stroke($color,$opacity:1) {
+  text-shadow:
+    (-.5px) (-.5px) .5px rgba($color,$opacity),
+       0    (-.5px) .5px rgba($color,$opacity),
+      .5px  (-.5px) .5px rgba($color,$opacity),
+      .5px     0    .5px rgba($color,$opacity),
+      .5px    .5px  .5px rgba($color,$opacity),
+       0      .5px  .5px rgba($color,$opacity),
+    (-.5px)   .5px  .5px rgba($color,$opacity),
+       0    (-.5px) .5px rgba($color,$opacity);
+}
