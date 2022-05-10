@@ -1,8 +1,10 @@
 <template>
   <main id="faq">
-    <div class="feature-section">
-      <div class="page-width page-padding">
-        <h1 class="h1-margin">Frequently Asked Questions</h1>
+    <div class="feature-section vertical-align vertical-align--middle">
+      <div class="vertical-align__content">
+        <div class="page-width page-padding">
+          <h1>Frequently Asked Questions</h1>
+        </div>
       </div>
     </div>
     <div class="page-width page-padding">
