@@ -2,15 +2,16 @@
     Font Families
 \*---------------------------------------------------------------------------*/
 %header-font-family {
-  font-family: 'Cinzel',Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+  /* Cinzel,Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif */
+  font-family: 'Roboto Slab',Tahoma,Verdana,Segoe,serif;
 }
 
 %body-font-family {
-  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+  font-family: 'Roboto',Arial,Helvetica Neue,Helvetica,sans-serif;
 }
 
 %code-font-family {
-  font-family: monaco,Consolas,Lucida Console,monospace;
+  font-family: 'Roboto Mono',Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
 }
 
 /*---------------------------------------------------------------------------*\
