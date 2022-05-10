@@ -2,9 +2,9 @@
     Feature Section
 \*---------------------------------------------------------------------------*/
 .feature-section {
-  padding: ($baseline-px * 3) 0 0 0;
+  padding: ($baseline-px * 2) 0;
   min-height: $header-height;
-  background: url("/static/img/feature-background.jpg") repeat-x 50% 0;
+  background: $grey-900;
   text-shadow: 0 (-1px) 1px $white;
   code {
     background: $white;
@@ -12,12 +12,45 @@
                 0 1px 2px rgba($black,.1);
   }
 }
-.feature-image {
+
+/*---------------------------------------------------------------------------*\
+    Feature Media
+\*---------------------------------------------------------------------------*/
+.feature-media {
   position: relative;
-  padding: ($baseline-px * 6) 0;
+  padding: 0 0 45% 0;
+  min-height: 600px;
+  overflow: hidden;
+  &.january,&.february {background: #847270}
+  &.march,&.april {background: #9b9795}
+  &.may {background: #727665}
+  &.june,&.july {background: #685b50}
+  &.august,&.september {background: #928167}
+  &.october {background: #513927}
+  &.november {background: #65493c}
+  &.december {background: #878175}
+  @include media-query('gt-desktop') {
+    min-height: 720px;
+  }
+}
+.feature-media__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  // Fallback styles for browsers not supporting object-fit
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+}
+.feature-media__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   &:before {
     @extend %psuedo-element;
     position: absolute;
@@ -25,42 +58,22 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba($black,.2);
-  }
-  &.january, &.february {
-    background-image: url("/static/img/feature-images/lunar-new-year.jpg");
-  }
-  &.march, &.april, &.may {
-    background-image: url("/static/img/feature-images/spring.jpg");
-  }
-  &.june, &.july {
-    background-image: url("/static/img/feature-images/dragon-bash.jpg");
-  }
-  &.august, &.september {
-    background-image: url("/static/img/feature-images/festival-of-the-four-winds.jpg");
-  }
-  &.october {
-    background-image: url("/static/img/feature-images/halloween.jpg");
-  }
-  &.november {
-    background-image: url("/static/img/feature-images/autumn.jpg");
-  }
-  &.december {
-    background-image: url("/static/img/feature-images/christmas.jpg");
+    background: rgba($black,.15);
   }
 }
 .feature-title {
+  font-size: $xl-font-rem;
+  line-height: $xl-line-rem;
   color: $white;
-  text-shadow: 0 1px 1px $black,
-               0 0 6px $black,
-               0 0 12px $black,
-               0 0 24px $black,
-               0 0 48px $black,
-               0 0 72px $black;
+  text-shadow: 0 5px 15px $black,
+               0 10px 30px rgba($black,.5),
+               0 20px 60px rgba($black,.25),
+               0 40px 120px rgba($black,.125);
 }
 .feature-button {
   margin: 60px 0 0 0;
-  box-shadow: 0 2px 4px rgba($black,.15),
-              0 4px 8px rgba($black,.3),
-              0 8px 16px rgba($black,.6);
+  box-shadow: 0 5px 15px rgba($black,.6),
+              0 10px 30px rgba($black,.3),
+              0 20px 60px rgba($black,.15),
+              0 40px 120px rgba($black,.075);
 }

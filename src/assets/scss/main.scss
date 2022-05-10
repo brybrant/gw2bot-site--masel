@@ -1,5 +1,6 @@
 @import 'functions';
 @import 'silent-classes';
+@import 'colors';
 @import 'settings';
 
 /*---------------------------------------------------------------------------*\
@@ -15,7 +16,8 @@ html {
   -webkit-text-size-adjust: 100%; /* [3] */
   font-size: 100%;
   line-height: $p-line-rem;
-  color: #000;
+  color: $grey-100;
+  background: $white;
 }
 *, *:before, *:after {
   box-sizing: inherit; /* [2] */
@@ -31,16 +33,17 @@ main {
   display: block;// Render the `main` element consistently in IE.
 }
 
-@import 'base/colors';
 @import 'base/images';
 @import 'base/typography';
 
 @import 'components/flexbox';
 @import 'components/buttons';
 @import 'components/header';
-@import 'components/api-check';
+//@import 'components/api-check';// Masel says API check is redundant now.
 @import 'components/navigation';
 @import 'components/feature-section';
+@import 'components/vertical-align';
+@import 'components/tooltips';
 @import 'components/hr';
 @import 'components/footer';
 
@@ -72,6 +75,10 @@ a, button {
   cursor: pointer;
 }
 
+.page {
+  position: relative;
+  margin-top: $nav-height;
+}
 .page-width {
   position: relative;
   margin: 0 auto;
