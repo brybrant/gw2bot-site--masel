@@ -1,21 +1,39 @@
 <template>
   <div id="app">
-    <nav class="flexbox" aria-label="Navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-      <div class="flexbox__item">
-        <router-link to="/" active-class="active" itemprop="url" exact>Home</router-link>
-      </div>
-      <div class="flexbox__item">
-        <router-link to="/commands" active-class="active" itemprop="url">Commands</router-link>
-      </div>
-      <div class="flexbox__item">
-        <router-link to="/faq" active-class="active" itemprop="url">F.A.Q</router-link>
-      </div>
-      <div class="flexbox__item">
-        <a href="https://discord.gg/VyQTrwP" target="_blank" itemprop="url">Support</a>
-      </div>
-    </nav>
+    <div class="top-bar">
+      <div class="top-bar__shadow">
+        <div class="page-width page-padding">
+          <router-link class="top-bar__logo" to="/"><img src="/static/img/nav-bar-logo.png"><span class="top-bar__logo-wordmark">GW2Bot</span><span class="sr-only"> - A Discord Bot for Guild Wars 2</span></router-link>
 
-    <router-view :invite-link='"https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands"'/>
+          <button @click="toggleNavigation(navActive)" class="main-nav-button" :class="{active: navActive}"><div><span class="sr-only">Toggle Navigation</span></div></button>
+        </div>
+      </div>
+
+       <div @click="hideNavigation(navActive)" class="mobile-navigation-cover" :class="{active: navActive}"></div>
+
+      <div class="page-width">
+        <div class="main-nav__container" :class="{active: navActive}">
+          <nav @click="hideNavigation(navActive)" class="main-nav" aria-label="Navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+            <router-link to="/" class="main-nav__link" active-class="active" itemprop="url" exact><span class="main-nav__link-name">Home</span></router-link>
+            <router-link to="/commands" class="main-nav__link" active-class="active" itemprop="url"><span class="main-nav__link-name">Commands</span></router-link>
+            <router-link to="/faq" class="main-nav__link" active-class="active" itemprop="url"><span class="main-nav__link-name">F.A<span class="q-kern">.</span>Q</span></router-link>
+            <a class="main-nav__link" href="https://discord.gg/VyQTrwP" target="_blank" itemprop="url"><span class="main-nav__link-name">Support</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <keep-alive>
+        <router-view :invite-link='"https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands"'/>
+      </keep-alive>
+      <!--<div class="api-status-bar">
+        <div class="page-width page-padding">
+          <span id="api-status" title="If API is offline, the bot will not function properly">Checking API...</span>
+        </div>
+      </div>-->
+      <!-- Masel says API check is redundant now -->
+    </div>
   </div>
 </template>
 
