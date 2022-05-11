@@ -90,21 +90,21 @@ $top-bar-shadow:
 ;
 
 $navigation-drawer-shadow:
-  5px 0 4px 8px rgba($black,.06),
-  4px 0 6px 8px rgba($black,.12),
+  6px 0 4px 8px rgba($black,.06),
+  5px 0 6px 8px rgba($black,.12),
   4px 0 8px 8px rgba($black,.24)
 ;
 
 $tooltip-shadow:
-  0 2px 4px (-1px) rgba($black,.24),
-  0 1px 6px 1px rgba($black,.12),
-  0 1px 8px 2px rgba($black,.06)
+  0 2px 4px rgba($black,.24),
+  0 1px 4px 1px rgba($black,.12),
+  0 0 5px rgba($black,.06)
 ;
 
 $button-shadow:
-  0 2px 3px (-1px) rgba($black,.24),
+  0 1px 3px (-1px) rgba($black,.24),
   0 1px 3px rgba($black,.12),
-  0 1px 4px rgba($black,.06)
+  0 0 4px 1px rgba($black,.06)
 ;
 
 $card-shadow: $button-shadow;
