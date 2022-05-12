@@ -2,16 +2,5 @@
     Header
 \*---------------------------------------------------------------------------*/
 header {
-  position: relative;
-  min-height: $header-height;
-  img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    margin: auto;
-    width: auto;
-    max-width: none;
-    height: $header-height;
-  }
+  padding: $baseline-rem 0;
 }

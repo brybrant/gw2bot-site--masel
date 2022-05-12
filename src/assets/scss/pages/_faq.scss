@@ -1,8 +1,13 @@
 /*---------------------------------------------------------------------------*\
     FAQ Page
 \*---------------------------------------------------------------------------*/
-#faq {
-  hr {
-    margin-top: (($baseline-px * 2) - 1px);
+.question {
+  margin: $baseline-rem 0 0 0;
+  padding: $baseline-rem ($gutter-px * .5) $baseline-rem ($gutter-px * .5);
+  border-radius: 6px;
+  background: $white;
+  box-shadow: $card-shadow;
+  h2 {
+    margin: 0;
   }
 }

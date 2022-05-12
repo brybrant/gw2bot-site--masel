@@ -1,15 +1,12 @@
 <template>
   <main id="commands">
-    <div class="feature-section vertical-align vertical-align--middle">
-      <div class="vertical-align__content">
-        <div class="page-width page-padding">
-          <h1>GW2Bot Commands</h1>
-          <h2 class="paragraph">Type <code>/</code> to see a full list of commands</h2>
-          <p>Use <code>&#11134; Tab</code> to autocomplete commands with options<!--: <code>/key add</code>--></p>
-        </div>
-      </div>
-    </div>
     <div class="page-width page-padding">
+      <header>
+        <h1>GW2Bot Commands</h1>
+        <p><strong>Type <code>/</code> to see a full list of commands</strong></p>
+        <p>Use <code>&#11134; Tab</code> to autocomplete commands with options</p>
+      </header>
+
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">

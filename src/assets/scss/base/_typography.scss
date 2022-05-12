@@ -34,7 +34,7 @@ h1, h2, .h2, h3, .h3/*, h4, h5, h6*/ {
 }
 h1 {
   @extend %header-font-family;
-  margin: 0;
+  margin: $h1-margin-rem 0 0 0;
   font-size: $h1-font-rem;
   line-height: $h1-line-rem;
 }
