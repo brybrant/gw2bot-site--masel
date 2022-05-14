@@ -2,7 +2,10 @@ import Vue from "vue";
 
 export default {
   data() {
-    return {navActive: false}
+    return {
+      navActive: false,
+      darkMode: /darkMode=true/.test(document.cookie)
+    }
   },
   methods: {
     toggleNavigation(navActive) {
@@ -14,6 +17,18 @@ export default {
     },
     hideNavigation(navActive) {
       Vue.set(this, "navActive", false);
+    },
+    toggleDarkMode(darkMode) {
+      var html = document.documentElement;
+      if (darkMode) {
+        Vue.set(this, "darkMode", false);
+        html.removeAttribute("class");
+        document.cookie = "darkMode=false;SameSite=Strict";
+      } else {
+        Vue.set(this, "darkMode", true);
+        html.className = "dark-mode";
+        document.cookie = "darkMode=true;SameSite=Strict";
+      }
     }
   },
   mounted() {
