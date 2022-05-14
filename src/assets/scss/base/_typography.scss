@@ -9,6 +9,9 @@ a {
   &:hover {
     text-decoration: none;
   }
+  .dark-mode & {
+    color: $red-900;
+  }
 }
 /*abbr[title] {
   cursor: help;
@@ -20,6 +23,9 @@ code {
   background: $grey-800;
   border-radius: 3px;
   font-size: 80%;
+  .dark-mode & {
+    background: $grey-200;
+  }
 }
 /*q {
   font-style: italic;

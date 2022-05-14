@@ -88,11 +88,21 @@ $top-bar-shadow:
   0 (-6px) 6px 10px rgba($black,.12),
   0 (-5px) 10px 10px rgba($black,.24)
 ;
+$top-bar-shadow--dark:
+  0 (-7px) 4px 10px rgba($black,.12),
+  0 (-6px) 6px 10px rgba($black,.24),
+  0 (-5px) 10px 10px rgba($black,.48)
+;
 
 $navigation-drawer-shadow:
   6px 0 4px 8px rgba($black,.06),
   5px 0 6px 8px rgba($black,.12),
   4px 0 8px 8px rgba($black,.24)
+;
+$navigation-drawer-shadow--dark:
+  6px 0 4px 8px rgba($black,.12),
+  5px 0 6px 8px rgba($black,.24),
+  4px 0 8px 8px rgba($black,.48)
 ;
 
 $tooltip-shadow:
@@ -100,12 +110,25 @@ $tooltip-shadow:
   0 1px 4px 1px rgba($black,.12),
   0 0 5px rgba($black,.06)
 ;
+$tooltip-shadow--dark:
+  0 2px 4px rgba($black,.60),
+  0 1px 4px 1px rgba($black,.30),
+  0 0 5px rgba($black,.15)
+;
 
 $button-shadow:
+  0 1px 3px rgba($black,.24),
+  0 1px 4px rgba($black,.12),
+  0 0 5px rgba($black,.06)
+;
+
+$card-shadow:
   0 1px 3px (-1px) rgba($black,.24),
   0 1px 3px rgba($black,.12),
   0 0 4px 1px rgba($black,.06)
 ;
-
-$card-shadow: $button-shadow;
-
+$card-shadow--dark:
+  0 1px 3px (-1px) rgba($black,.72),
+  0 1px 3px rgba($black,.48),
+  0 0 4px 1px rgba($black,.24)
+;

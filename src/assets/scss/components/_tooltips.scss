@@ -39,4 +39,14 @@
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
   }
+  .dark-mode & {
+    background: $grey-100;
+    box-shadow: $tooltip-shadow--dark;
+    &:before {
+      border-top-color: $grey-50;
+    }
+    &:after {
+      border-top-color: $grey-100;
+    }
+  }
 }
