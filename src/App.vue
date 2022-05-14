@@ -5,11 +5,19 @@
         <div class="page-width page-padding">
           <router-link class="top-bar__logo" to="/"><img src="/static/img/nav-bar-logo.png"><span class="top-bar__logo-wordmark">GW2Bot</span><span class="sr-only"> - A Discord Bot for Guild Wars 2</span></router-link>
 
-          <button @click="toggleNavigation(navActive)" class="main-nav-button" :class="{active: navActive}"><div><span class="sr-only">Toggle Navigation</span></div></button>
+          <div class="top-bar__toggles">
+            <div class="top-bar__toggle">
+              <button @click="toggleDarkMode(darkMode)" class="dark-mode-button" :class="{active: darkMode}" :title="darkMode?'Switch to light mode':'Switch to dark mode'"></button>
+            </div>
+
+            <div class="top-bar__toggle top-bar__toggle--navigation">
+              <button @click="toggleNavigation(navActive)" class="main-nav-button" :class="{active: navActive}" :title="navActive?'Hide navigation':'Show navigation'"><div></div></button>
+            </div>
+          </div>
         </div>
       </div>
 
-       <div @click="hideNavigation(navActive)" class="mobile-navigation-cover" :class="{active: navActive}"></div>
+      <div @click="hideNavigation(navActive)" class="mobile-navigation-cover" :class="{active: navActive}"></div>
 
       <div class="page-width">
         <div class="main-nav__container" :class="{active: navActive}">
@@ -24,9 +32,7 @@
     </div>
 
     <div class="page">
-      <keep-alive>
-        <router-view :invite-link='"https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands"'/>
-      </keep-alive>
+      <router-view :invite-link='"https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands"'/>
       <!--<div class="api-status-bar">
         <div class="page-width page-padding">
           <span id="api-status" title="If API is offline, the bot will not function properly">Checking API...</span>
