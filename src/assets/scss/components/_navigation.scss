@@ -22,7 +22,7 @@
   @include media-query('gt-tablet') {
     position: absolute;
     top: 0;
-    right: $nav-logo-height + ($gutter-px * 2);
+    right: 64px + $gutter-px;
     left: auto;
     width: auto;
     height: $nav-height;
@@ -87,7 +87,7 @@
   .dark-mode & {
     color: $grey-700;
     &:hover {
-      color: color.scale($red-900, $saturation: 100%, $lightness: 15%);
+      color: color.scale($red-400, $saturation: 100%, $lightness: 42%);
     }
     &.active {
       color: $white;

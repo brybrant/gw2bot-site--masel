@@ -32,9 +32,9 @@
   white-space: nowrap;
   text-decoration: none;
   vertical-align: top;
-  img {
+  picture {
     display: inline-block;
-    width: auto;
+    width: 41.5px;
     height: $nav-logo-height;
     vertical-align: top;
   }
@@ -90,7 +90,7 @@
 
 .dark-mode-button {
   position: relative;
-  margin: 22px 12px;
+  margin: 22px 6px;
   padding: 0;
   width: 36px;
   height: 16px;
@@ -121,6 +121,7 @@
 }
 .main-nav-button {
   position: relative;
+  padding: 0;
   width: $nav-logo-height;
   height: $nav-logo-height;
   border: 0;

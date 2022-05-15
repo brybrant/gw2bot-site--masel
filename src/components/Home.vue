@@ -6,6 +6,8 @@
     </div>
     <div class="feature-media" :class="month">
       <picture>
+        <source media="(max-width: 720px)" :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'.webp'" type="image/webp">
+        <source :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'--high.webp'" type="image/webp">
         <img data-sizes="auto" class="feature-media__media lazyload" :src="'/static/img/feature-images/'+featureMedia[month]+'--low.jpg'" :data-src="'/static/img/feature-images/'+featureMedia[month]+'.jpg'" :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'.jpg 960w, /static/img/feature-images/'+featureMedia[month]+'--high.jpg 1920w'" alt="">
       </picture>
       <!--<video class="feature-media__media" autoplay loop muted playsinline>
@@ -14,7 +16,7 @@
       <div class="feature-media__content vertical-align vertical-align--middle">
         <div class="vertical-align__content">
           <div class="page-width">
-            <h1 class="feature-title">Bring The World of Tyria Into&nbsp;Discord</h1>
+            <h1 class="feature-title">Bring The World&nbsp;of Tyria Into&nbsp;Discord</h1>
             <a class="feature-button button button--giant" :href="inviteLink" target="_blank">Add To Your Server!</a>
           </div>
         </div>
