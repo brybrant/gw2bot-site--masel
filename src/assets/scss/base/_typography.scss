@@ -1,16 +1,17 @@
+@use 'sass:color';
 /*---------------------------------------------------------------------------*\
     Typography
 \*---------------------------------------------------------------------------*/
 a {
   // Remove the gray background on active links in IE 10.
   background-color: transparent;
-  color: $red-400;
+  color: $red-500;
   text-decoration: underline;
   &:hover {
     text-decoration: none;
   }
   .dark-mode & {
-    color: $red-900;
+    color: color.scale($red-400, $saturation: 100%, $lightness: 50%);
   }
 }
 /*abbr[title] {

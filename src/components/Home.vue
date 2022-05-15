@@ -6,7 +6,7 @@
     </div>
     <div class="feature-media" :class="month">
       <picture>
-        <img data-sizes="auto" class="feature-media__media lazyload" :src="'/static/img/feature-images/'+featureMedia[month]+'--low.jpg'" :data-src="'/static/img/feature-images/'+featureMedia[month]+'.jpg'" :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'.jpg 960w, /static/img/feature-images/'+featureMedia[month]+'--high.jpg 1920w'">
+        <img data-sizes="auto" class="feature-media__media lazyload" :src="'/static/img/feature-images/'+featureMedia[month]+'--low.jpg'" :data-src="'/static/img/feature-images/'+featureMedia[month]+'.jpg'" :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'.jpg 960w, /static/img/feature-images/'+featureMedia[month]+'--high.jpg 1920w'" alt="">
       </picture>
       <!--<video class="feature-media__media" autoplay loop muted playsinline>
         <source src="/static/img/feature-images/Sea_Dragon.mp4" type="video/mp4">

@@ -3,7 +3,7 @@
     <div class="top-bar">
       <div class="top-bar__shadow">
         <div class="page-width page-padding">
-          <router-link class="top-bar__logo" to="/"><img src="/static/img/nav-bar-logo.png"><span class="top-bar__logo-wordmark">GW2Bot</span><span class="sr-only"> - A Discord Bot for Guild Wars 2</span></router-link>
+          <router-link class="top-bar__logo" to="/"><img src="/static/img/nav-bar-logo.png" alt="GW2Bot Logo"><span class="top-bar__logo-wordmark">GW2Bot</span><span class="sr-only"> - A Discord Bot for Guild Wars 2</span></router-link>
 
           <div class="top-bar__toggles">
             <div class="top-bar__toggle">
