@@ -6,7 +6,7 @@
     </div>
     <div class="feature-media" :class="month">
       <picture>
-        <source media="(max-width: 720px)" :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'.webp'" type="image/webp">
+        <source media="(max-width: 800px)" :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'.webp'" type="image/webp">
         <source :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'--high.webp'" type="image/webp">
         <img data-sizes="auto" class="feature-media__media lazyload" :src="'/static/img/feature-images/'+featureMedia[month]+'--low.jpg'" :data-src="'/static/img/feature-images/'+featureMedia[month]+'.jpg'" :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'.jpg 960w, /static/img/feature-images/'+featureMedia[month]+'--high.jpg 1920w'" alt="">
       </picture>
@@ -67,7 +67,12 @@ export default {
     };
   },
   mounted() {
-    this.$loadScript("https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js");
+    var lazySizesScript = document.createElement("script");
+    lazySizesScript.id = "lazySizesScript";
+    lazySizesScript.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
+    if(!document.getElementById("lazySizesScript")) {
+      document.body.appendChild(lazySizesScript);
+    }
 
     this.$loadScript("https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js").then(() => {
       // eslint-disable-next-line
