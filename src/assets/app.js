@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       navActive: false,
-      darkMode: /darkMode=true/.test(document.cookie)
+      darkMode: (/darkMode=true/.test(document.cookie)||/dark-mode/.test(document.documentElement.className))
     }
   },
   methods: {
