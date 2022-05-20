@@ -1,9 +1,5 @@
 <template>
   <main id="index">
-    <div class="alert" v-if="!alert">
-      <span class="close-button" title="Dismiss" @click="closeAlert">&times;</span>
-      A major update is now live along with Patreon!
-    </div>
     <div class="feature-media" :class="month">
       <picture>
         <source media="(max-width: 800px)" :data-srcset="'/static/img/feature-images/'+featureMedia[month]+'.webp'" type="image/webp">
@@ -40,15 +36,8 @@
 <script scoped>
 export default {
   props: ["inviteLink"],
-  methods: {
-    closeAlert: function(event) {
-      event.target.parentElement.style.display = "none";
-      document.cookie = "alert=off;SameSite=Strict";
-    }
-  },
   data() {
     return {
-      alert: /alert=off/.test(document.cookie),
       month: ["january","february","march","april","may","june","july","august","september","october","november","december"][(new Date()).getMonth()],
       featureMedia: {
         january: "lunar-new-year",
