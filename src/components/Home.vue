@@ -64,31 +64,28 @@ export default {
     }
 
     this.$loadScript("https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js").then(() => {
+      var resizeTimer;
       // eslint-disable-next-line
-      new Rellax(".feature-media__media",{speed: -3});
+      var rellax = new Rellax(".feature-media__media",{speed: -3});
+
+      function responsiveRellax() {
+        if(window.innerWidth<801) {
+          rellax.destroy();
+        } else {
+          rellax.refresh();
+        }
+      }
+
+      window.addEventListener("resize",function() {
+        clearTimeout(resizeTimer);
+        // Debounce the resize event for performance
+        resizeTimer = setTimeout(function() {
+          responsiveRellax();
+        },250);
+      });
+
+      responsiveRellax();
     });
   }
 };
 </script>
-
-<style scoped>
-.alert {
-  padding: 24px;
-  background-color: #b40000;
-  color: #fff;
-  font-weight: 700;
-}
-
-.close-button {
-  margin-left: 15px;
-  color: #fff;
-  float: right;
-  font-size: 32px;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  color: #000;
-}
-</style>
-
