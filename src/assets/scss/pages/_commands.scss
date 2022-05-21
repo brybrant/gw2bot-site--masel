@@ -133,7 +133,7 @@
 .subcommand__name {
   @extend %code-font-family;
   line-height: $baseline-px;
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
   letter-spacing: -0.3px;
   button {
@@ -173,7 +173,7 @@
 .arg__name {
   @extend %code-font-family;
   line-height: $baseline-px;
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
   letter-spacing: -0.3px;
   span {
