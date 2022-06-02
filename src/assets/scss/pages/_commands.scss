@@ -15,7 +15,7 @@
 
 .command {
   position: relative;
-  padding: ($baseline-px * .5);
+  padding: ($baseline-px * .25) ($baseline-px * .5) ($baseline-px * .5) ($baseline-px * .5);
   //border: 1px solid $grey-700;
   border-radius: 6px;
   background: $white;
