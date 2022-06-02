@@ -12,6 +12,16 @@
       </div>
 
       <div class="question">
+        <h2>How do I link my Guild Wars 2 account to&nbsp;GW2Bot?</h2>
+        <p>Follow the text instructions below or <a href="https://www.youtube.com/watch?v=OHyP0xQmgjw" target="_blank">watch this video guide</a>.</p>
+        <ol>
+          <li>Login to ArenaNet's website at <a href="https://account.arena.net/" target="_blank">https://account.arena.net/</a> with your Guild Wars 2 username and password, then go to the Applications tab and click the "New Key" button.</li>
+          <li>Input a name for the new API key and select the permissions you wish to grant GW2Bot, then click "Create API Key". <em>Note: some commands will not work unless you select the appropriate permissions.</em></li>
+          <li>Copy the new API key, then send a direct message on Discord to <code>GW2Bot#2251</code> with the following command to add a new API key: <code>/key&nbsp;add&nbsp;(your&nbsp;API&nbsp;key)</code></li>
+        </ol>
+      </div>
+
+      <div class="question">
         <h2>Does the bot work in DMs?</h2>
         <p>Yes. API keys are cross-server too, if you're in multiple servers with the bot.</p>
       </div>
@@ -35,6 +45,11 @@
           <li>Only server members with API key added to the bot will participate in the sync and no input is required from them.</li>
           <li>New members who add their API key after sync is setup will also be synced automatically.</li>
         </ul>
+      </div>
+
+      <div class="question">
+        <h2>The bot is not working! What should I&nbsp;do?</h2>
+        <p>For help and guidance with GW2Bot, <a href="https://discord.gg/VyQTrwP" target="_blank">join the support server</a>!</p>
       </div>
     </div>
   </main>
