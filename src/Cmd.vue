@@ -17,6 +17,11 @@
     </h3>
     <p class="command__desc">{{ command.desc | twoOrphans }}</p>
 
+    <div v-if="command.permissions" class="permissions">
+      <p class="small-text">{{ "Required API key permission"+(command.permissions.length>1?'s:':':') }}<br>
+      <code v-for="permission in command.permissions" :key="permission.id" class="smaller">{{ permission }}</code></p>
+    </div>
+
     <ul v-if="command.subcommands" v-show="command.active" class="subcommand-list" :id="command.name+'-subcommands'">
       <li class="subcommand" v-for="subcommand in command.subcommands" :key="subcommand.id">
         <div v-if="subcommand.args" class="tooltip" :class="{active: subcommand.active}" :id="command.name+'-'+subcommand.name+'-tooltip'">
@@ -28,6 +33,11 @@
           <button v-if="subcommand.args" @click="toggleActive(subcommand)" class="args-button" :class="{active: subcommand.active}" :aria-controls="command.name+'-'+subcommand.name+'-tooltip'" :aria-expanded="subcommand.active?'true':'false'" :title="subcommand.active?'Hide command arguments':'Show command arguments'" v-html="'+'+subcommand.args.length"></button>
         </p>
         <p class="small-text">{{ subcommand.desc | twoOrphans }}</p>
+
+        <div v-if="subcommand.permissions" class="permissions">
+          <p class="small-text">{{ "Required API key permission"+(subcommand.permissions.length>1?'s:':':') }}<br>
+          <code v-for="permission in subcommand.permissions" :key="permission.id" class="smaller">{{ permission }}</code></p>
+        </div>
       </li>
     </ul>
   </li>

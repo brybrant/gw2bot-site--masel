@@ -121,6 +121,11 @@ $button-shadow:
   0 1px 4px rgba($black,.12),
   0 0 5px rgba($black,.06)
 ;
+$button-shadow--light:
+  0 1px 3px rgba($black,.12),
+  0 1px 4px rgba($black,.06),
+  0 0 5px rgba($black,.03)
+;
 
 $card-shadow:
   0 1px 3px (-1px) rgba($black,.24),

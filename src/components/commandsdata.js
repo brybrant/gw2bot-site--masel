@@ -10,11 +10,17 @@ export default {
       commandsMain: [
         {
           name: "account",
-          desc: "Information about your account"
+          desc: "Information about your account",
+          permissions: [
+            "account"
+          ]
         },
         {
           name: "achievement",
           desc: "Display achievement information and your completion status",
+          permissions: [
+            "progression"
+          ],
           args: [
             {
               name: "achievement",
@@ -25,11 +31,17 @@ export default {
         },
         {
           name: "bosses",
-          desc: "Shows your raid progression for the week"
+          desc: "Shows your raid progression for the week",
+          permissions: [
+            "progression"
+          ]
         },
         {
           name: "cats",
-          desc: "Displays cats you have not collected yet"
+          desc: "Displays cats you have not collected yet",
+          permissions: [
+            "progression"
+          ]
         },
         /*{
           name: "changelog",
@@ -45,15 +57,25 @@ export default {
             },*/
             {
               name: "birthdays",
-              desc: "Lists days until each of your character's birthdays"
+              desc: "Lists days until each of your character's birthdays",
+              permissions: [
+                "characters"
+              ]
             },
             {
               name: "crafting",
-              desc: "Displays your characters and their crafting level"
+              desc: "Displays your characters and their crafting level",
+              permissions: [
+                "characters"
+              ]
             },
             {
               name: "fashion",
               desc: "Displays the skins and dyes of a given character",
+              permissions: [
+                "characters",
+                "builds"
+              ],
               args: [
                 {
                   name: "character",
@@ -64,6 +86,10 @@ export default {
             {
               name: "gear",
               desc: "Displays the gear and build of a given character",
+              permissions: [
+                "characters",
+                "builds"
+              ],
               args: [
                 {
                   name: "character",
@@ -74,6 +100,10 @@ export default {
             {
               name: "info",
               desc: "Info about a given character",
+              permissions: [
+                "characters",
+                "builds"
+              ],
               args: [
                 {
                   name: "character",
@@ -84,6 +114,10 @@ export default {
             {
               name: "list",
               desc: "Lists all your characters with extra information",
+              permissions: [
+                "characters",
+                "builds"
+              ],
               args: [
                 {
                   name: "info",
@@ -262,6 +296,9 @@ export default {
         {
           name: "guild",
           desc: "Guild related commands",
+          permissions: [
+            "guilds"
+          ],
           subcommands: [
             {
               name: "default",
@@ -332,6 +369,9 @@ export default {
             {
               name: "add",
               desc: "Add a new guildsync (max 10)",
+              permissions: [
+                "guilds"
+              ],
               args: [
                 {
                   name: "guild_name",
@@ -404,6 +444,9 @@ export default {
             {
               name: "purge",
               desc: "Toggle kicking of users that are not in any of the synced guilds",
+              permissions: [
+                "guilds"
+              ],
               args: [
                 {
                   name: "enabled",
@@ -474,15 +517,25 @@ export default {
         },
         {
           name: "kp",
-          desc: "Shows completed raids and fractals"
+          desc: "Shows completed raids and fractals",
+          permissions: [
+            "progression"
+          ]
         },
         {
           name: "li",
-          desc: "Shows how many Legendary Insights and Divinations you have earned"
+          desc: "Shows how many Legendary Insights and Divinations you have earned",
+          permissions: [
+            "characters",
+            "inventories"
+          ]
         },
         {
           name: "nodes",
-          desc: "Displays the home instance nodes you have not yet unlocked (Requires \"progression\" permission)"
+          desc: "Displays the home instance nodes you have not yet unlocked",
+          permissions: [
+            "progression"
+          ]
         },
         /*{
           name: "prefix",
@@ -491,6 +544,9 @@ export default {
         {
           name: "pvp",
           desc: "Commands related to PvP",
+          permissions: [
+            "pvp"
+          ],
           subcommands: [
             {
               name: "professions",
@@ -522,6 +578,10 @@ export default {
         {
           name: "sab",
           desc: "Commands related to Super Adventure Box",
+          permissions: [
+            "characters",
+            "progression"
+          ],
           subcommands: [
             {
               name: "unlocks",
@@ -550,6 +610,10 @@ export default {
         {
           name: "search",
           desc: "Search your account for items",
+          permissions: [
+            "characters",
+            "inventories"
+          ],
           args: [
             {
               name: "item",
@@ -565,6 +629,9 @@ export default {
             {
               name: "force_account_names",
               desc: "Automatically change nicknames to in-game names",
+              permissions: [
+                "account"
+              ],
               args: [
                 {
                   name: "enabled",
@@ -619,7 +686,10 @@ export default {
           subcommands: [
             {
               name: "buying",
-              desc: "Show current buying transactions"
+              desc: "Show current buying transactions",
+              permissions: [
+                "tradingpost"
+              ]
             },
             /*{
               name: "current",
@@ -627,7 +697,10 @@ export default {
             },*/
             {
               name: "delivery",
-              desc: "Show your items awaiting in delivery box"
+              desc: "Show your items awaiting in delivery box",
+              permissions: [
+                "tradingpost"
+              ]
             },
             {
               name: "price",
@@ -642,7 +715,10 @@ export default {
             },
             {
               name: "selling",
-              desc: "Show current selling transactions"
+              desc: "Show current selling transactions",
+              permissions: [
+                "tradingpost"
+              ]
             }
           ]
         },
@@ -660,6 +736,9 @@ export default {
         {
           name: "wallet",
           desc: "Info about all of your currencies",
+          permissions: [
+            "wallet"
+          ],
           args: [
             /*{
               name: "currencies",
@@ -738,6 +817,9 @@ export default {
             {
               name: "info",
               desc: "Info about a world. Defaults to account's world",
+              permissions: [
+                "account"
+              ],
               args: [
                 {
                   name: "world",

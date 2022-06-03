@@ -30,6 +30,7 @@
     display: inline-block;
     border: 1px solid $grey-700;
     background: $white;
+    box-shadow: $button-shadow--light;
     vertical-align: top;
     &:hover {
       background: $grey-900;
@@ -210,5 +211,18 @@
   }
   .dark-mode & {
     border-top-color: $grey-200;
+  }
+}
+
+.permissions {
+  display: inline-block;
+  margin: 4px 0 0 0;
+  padding: 4px 8px 0 8px;
+  border-top: 1px solid $grey-700;
+  .dark-mode & {
+    border-color: $grey-300;
+  }
+  code ~ code {
+    margin-left: 6px;
   }
 }
