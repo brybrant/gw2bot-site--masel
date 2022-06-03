@@ -28,21 +28,21 @@
 
       <div class="question">
         <h2 class="h3">How do I setup game update notifications?</h2>
-        <p>First, you must have the "manage server" permission.</p>
+        <p>First, make sure you have the "Manage Server" permission in the applicable Discord server.</p>
         <p>Provided you have that, point the bot to the channel where it'll post announcements, using <code>/notifier&nbsp;update&nbsp;channel</code>.</p>
         <p>Make sure the bot has permissions to talk in that channel.</p>
       </div>
 
       <div class="question">
         <h2 class="h3">What is guildsync?</h2>
-        <p>guildsync is a feature which allows you to sync your in-game ranks with discord roles.</p>
+        <p>guildsync is a feature which allows you to sync your in-game guild ranks with Discord roles.</p>
         <ul>
           <li>It requires leader permissions in-game.</li>
-          <li>It is tied to your account. If you remove your API key, it will break.</li>
-          <li>It isn't instant - it can take even 30 minutes before your settings are synced. To force a sync, you can use <code>/server&nbsp;sync</code>.</li>
-          <li>Always ensure that GW2Bot is above the synced roles, or the bot won't be able to assign them.</li>
+          <li>It is tied to your Guild Wars 2 account; if you remove your API key, guildsync will break.</li>
+          <li>Syncing isn't instant - it can sometimes take up to 30 minutes before your settings are synced. To force a sync, you can use command <code>/server&nbsp;sync</code>.</li>
+          <li>Always ensure that GW2Bot is above the synced roles, or else the bot won't be able to assign them.</li>
           <li>You can modify and change permissions of the roles created by the bot.</li>
-          <li>Only server members with API key added to the bot will participate in the sync and no input is required from them.</li>
+          <li>Only server members with an API key added to the bot will participate in the sync and no input is required from them.</li>
           <li>New members who add their API key after sync is setup will also be synced automatically.</li>
         </ul>
       </div>
