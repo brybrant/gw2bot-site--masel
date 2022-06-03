@@ -45,6 +45,9 @@
         background: $black;
       }
     }
+    .dark-mode & {
+      box-shadow: $button-shadow;
+    }
   }
   .tooltip {
     right: (-6px);
@@ -92,6 +95,10 @@
 .command__desc {
   margin: 2px 0 10px 0;
   line-height: $baseline-px;
+  color: $grey-150;
+  .dark-mode & {
+    color: $grey-900;
+  }
 }
 .command-button {
   border-radius: 20px;
