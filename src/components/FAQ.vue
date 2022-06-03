@@ -49,7 +49,7 @@
 
       <div class="question">
         <h2 class="h3">Why are the emojis not displaying correctly in my Discord&nbsp;server?</h2>
-        <p>Please remember to grant the bot "Use External Emojis" permission within your Discord server.</p>
+        <p>You must grant the permission "Use External Emojis" to the <code>@everyone</code> role within your Discord server.</p>
       </div>
 
       <div class="question">
