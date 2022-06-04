@@ -209,7 +209,9 @@ export default {
               required: true,
               options: [
                 "Day/night cycle",
+                "EoD - End of Dragons",
                 "HoT - Heart of Thorns",
+                "IBS - Icebrood Saga",
                 "PoF - Path of Fire",
                 "World bosses"
               ]
@@ -626,6 +628,26 @@ export default {
           name: "server",
           desc: "Commands for server management",
           subcommands: [
+            {
+              name: "api_key_role",
+              desc: "Automatically add a role to members that have added an API key to the bot",
+              args: [
+                {
+                  name: "enabled",
+                  desc: "Enable or disable giving members with an API key a role",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                },
+                {
+                  name: "role",
+                  desc: "The role that will be given to members with an API key added",
+                  required: true
+                }
+              ]
+            },
             {
               name: "force_account_names",
               desc: "Automatically change nicknames to in-game names",
