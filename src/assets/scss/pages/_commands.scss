@@ -142,7 +142,7 @@
   @extend %code-font-family;
   line-height: $baseline-px;
   font-weight: 600;
-  white-space: nowrap;
+  //white-space: nowrap;
   letter-spacing: -0.3px;
   button {
     line-height: $baseline-px - 4px;
@@ -225,9 +225,9 @@
   display: inline-block;
   margin: 4px 0 0 0;
   padding: 4px 8px 0 8px;
-  border-top: 1px solid $grey-700;
+  border-top: 1px solid $grey-800;
   .dark-mode & {
-    border-color: $grey-300;
+    border-color: $grey-200;
   }
   code ~ code {
     margin-left: 6px;

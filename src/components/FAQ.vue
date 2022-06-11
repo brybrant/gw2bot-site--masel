@@ -39,7 +39,7 @@
         <ul>
           <li>It requires leader permissions in-game.</li>
           <li>It is tied to your Guild Wars 2 account; if you remove your API key, guildsync will break.</li>
-          <li>Syncing isn't instant - it can sometimes take up to 30 minutes before your settings are synced. To force a sync, you can use command <code>/server&nbsp;sync</code>.</li>
+          <li>Syncing isn't instant - it can sometimes take up to 30 minutes before your settings are synced. To force a sync, you can use command <code>/server&nbsp;sync_now</code>.</li>
           <li>Always ensure that GW2Bot is above the synced roles, or else the bot won't be able to assign them.</li>
           <li>You can modify and change permissions of the roles created by the bot.</li>
           <li>Only server members with an API key added to the bot will participate in the sync and no input is required from them.</li>

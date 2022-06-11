@@ -10,7 +10,7 @@ export default {
       commandsMain: [
         {
           name: "account",
-          desc: "Information about your account",
+          desc: "General information about your account",
           permissions: [
             "account"
           ]
@@ -23,7 +23,7 @@ export default {
           ],
           args: [
             {
-              name: "achievement",
+              name: "achievement_name",
               desc: "Name of achievement. Example: Playing Chicken",
               required: true
             }
@@ -38,7 +38,7 @@ export default {
         },
         {
           name: "cats",
-          desc: "Displays cats you have not collected yet",
+          desc: "Displays the cats you haven't unlocked yet",
           permissions: [
             "progression"
           ]
@@ -57,7 +57,7 @@ export default {
             },*/
             {
               name: "birthdays",
-              desc: "Lists days until each of your character's birthdays",
+              desc: "Lists days until the next birthday for each of your characters",
               permissions: [
                 "characters"
               ]
@@ -71,7 +71,7 @@ export default {
             },
             {
               name: "fashion",
-              desc: "Displays the skins and dyes of a given character",
+              desc: "Displays the fashion wars of given character",
               permissions: [
                 "characters",
                 "builds"
@@ -79,13 +79,14 @@ export default {
               args: [
                 {
                   name: "character",
-                  desc: "Character name to inspect. Skip to get a list instead"
+                  desc: "Name of character to inspect",
+                  required: true
                 }
               ]
             },
             {
               name: "gear",
-              desc: "Displays the gear and build of a given character",
+              desc: "Displays the gear, attributes and build of given character",
               permissions: [
                 "characters",
                 "builds"
@@ -93,13 +94,14 @@ export default {
               args: [
                 {
                   name: "character",
-                  desc: "Character name to inspect. Skip to get a list instead"
+                  desc: "Name of character to inspect",
+                  required: true
                 }
               ]
             },
             {
               name: "info",
-              desc: "Info about a given character",
+              desc: "Info about the given character",
               permissions: [
                 "characters",
                 "builds"
@@ -107,13 +109,14 @@ export default {
               args: [
                 {
                   name: "character",
-                  desc: "Character name to inspect. Skip to get a list instead"
+                  desc: "Name of character to inspect",
+                  required: true
                 }
               ]
             },
             {
               name: "list",
-              desc: "Lists all your characters with extra information",
+              desc: "Lists all your characters",
               permissions: [
                 "characters",
                 "builds"
@@ -121,9 +124,10 @@ export default {
               args: [
                 {
                   name: "info",
-                  desc: "Select additional information to display",
+                  desc: "Select additional information to display, and to sort by",
                   options: [
                     "Age",
+                    "Profession",
                     "Time played"
                   ]
                 }
@@ -191,7 +195,11 @@ export default {
             },
             {
               name: "tomorrow",
-              desc: "Select this option to view tomorrow's dailies instead"
+              desc: "Show tomorrow's dailies instead",
+              options: [
+                "False",
+                "True"
+              ]
             }
           ]
         },
@@ -201,7 +209,7 @@ export default {
         },*/
         {
           name: "et",
-          desc: "The event timer",
+          desc: "Event timer",
           args: [
             {
               name: "category",
@@ -211,7 +219,7 @@ export default {
                 "Day/night cycle",
                 "EoD - End of Dragons",
                 "HoT - Heart of Thorns",
-                "IBS - Icebrood Saga",
+                "IBS - The Icebrood Saga",
                 "PoF - Path of Fire",
                 "World bosses"
               ]
@@ -220,7 +228,18 @@ export default {
         },
         {
           name: "evtc",
-          desc: "Commands related to arcdps log files",
+          desc: "Process an EVTC combat log in an attachment",
+          args: [
+            {
+              name: "file",
+              desc: "EVTC file to process. Accepted formats: .evtc, .zip, .zevtc",
+              required: true
+            }
+          ]
+        },
+        {
+          name: "evtc_automation",
+          desc: "Commands related to automatic processing of arcdps log files",
           subcommands: [
             {
               name: "api_key",
@@ -240,24 +259,33 @@ export default {
             },
             {
               name: "autopost add_destination",
-              desc: "Adds the current Discord channel as a destination to autopost EVTC logs to"
+              desc: "Add this channel as a personal destination to autopost EVTC logs to"
             },
             {
               name: "autopost remove_destinations",
-              desc: "Removes all Discord channels from the list of autopost destinations"
+              desc: "Remove chosen EVTC autoupload destinations"
             },
             {
               name: "channel",
-              desc: "Sets the current Discord channel to automatically process EVTC logs",
+              desc: "Sets a channel to automatically used to process EVTC logs posted within",
               args: [
                 {
+                  name: "enabled",
+                  desc: "Disable or enable this feature on the specified channel",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                },
+                {
                   name: "channel",
-                  desc: "The channel to enable automatic EVTC processing on",
+                  desc: "The target channel",
                   required: true
                 },
                 {
                   name: "autodelete",
-                  desc: "Automatically delete message after processing the EVTC log",
+                  desc: "Delete original message after processing the EVTC log",
                   required: true,
                   options: [
                     "False",
@@ -284,11 +312,11 @@ export default {
             },
             {
               name: "track",
-              desc: "Recive a notification when cost of 400 gems drops below the specified cost",
+              desc: "Recive a notification when cost of 400 gems drops below given cost",
               args: [
                 {
                   name: "gold",
-                  desc: "Recieve a notification when price of 400 gems drops below the specified amount",
+                  desc: "Recive a notification when price of 400 gems drops below this amount. Set to 0 to disable",
                   required: true
                 }
               ]
@@ -304,11 +332,12 @@ export default {
           subcommands: [
             {
               name: "default",
-              desc: "Set your default guild for guild commands on the current Discord Server",
+              desc: "Set your default guild for guild commands on this server",
               args: [
                 {
-                  name: "guild_name",
-                  desc: "Guild name. Leave blank to reset"
+                  name: "guild",
+                  desc: "Guild name",
+                  required: true
                 }
               ]
             },
@@ -317,8 +346,9 @@ export default {
               desc: "General guild stats",
               args: [
                 {
-                  name: "guild_name",
-                  desc: "Guild name. Can be blank if the server has a default guild. Required otherwise"
+                  name: "guild",
+                  desc: "Guild name",
+                  required: true
                 }
               ]
             },
@@ -327,18 +357,19 @@ export default {
               desc: "Get log of last 20 entries of stash/treasury/members",
               args: [
                 {
+                  name: "guild",
+                  desc: "Guild name",
+                  required: true
+                },
+                {
                   name: "log_type",
                   desc: "Select the type of log to inspect",
                   required: true,
                   options: [
-                    "Roster",
+                    "Members",
                     "Stash",
                     "Treasury"
                   ]
-                },
-                {
-                  name: "guild_name",
-                  desc: "Guild name. Can be blank if this server has a default guild. Required otherwise"
                 }
               ]
             },
@@ -347,8 +378,9 @@ export default {
               desc: "Shows a list of members and their ranks",
               args: [
                 {
-                  name: "guild_name",
-                  desc: "Guild name. Can be blank if this server has a default guild. Required otherwise"
+                  name: "guild",
+                  desc: "Guild name",
+                  required: true
                 }
               ]
             },
@@ -357,8 +389,9 @@ export default {
               desc: "Get list of current and needed items for upgrades",
               args: [
                 {
-                  name: "guild_name",
-                  desc: "Guild name. Can be blank if this server has a default guild. Required otherwise"
+                  name: "guild",
+                  desc: "Guild name",
+                  required: true
                 }
               ]
             }
@@ -370,7 +403,7 @@ export default {
           subcommands: [
             {
               name: "add",
-              desc: "Add a new guildsync (max 10)",
+              desc: "Sync your in-game guild ranks with Discord. Add a guild",
               permissions: [
                 "guilds"
               ],
@@ -416,23 +449,28 @@ export default {
             },*/
             {
               name: "edit",
-              desc: "Edit or delete existing guildsyncs",
+              desc: "Change settings and delete guildsyncs",
               args: [
                 {
+                  name: "sync",
+                  desc: "The guildsync to modify",
+                  required: true
+                },
+                {
                   name: "operation",
-                  desc: "Select the operation. You will be prompted to select the sync after the command",
+                  desc: "Select the operation",
                   required: true,
                   options: [
                     "Change API key. Make sure to fill out the api_key optional argument",
                     "Delete a guildsync",
-                    "Toggle guild role. If disabled, this will delete the role created by the bot",
-                    "Toggle syncing ranks. If disabled, this will delete the role created by the bot"
+                    "Toggle guild role. If disabled, this will delete the roles created by the bot",
+                    "Toggle syncing ranks. If disabled, this will delete the roles created by the bot"
                   ]
                 },
                 {
                   name: "api_key",
-                  desc: "The API key to use for authorization. Use only if you've selected it as the <code>authentication_method</code>"
-                }
+                  desc: "The API key to use for authorization. Use only if you've selected the \"Change API key\" <code>operation</code>"
+                },
               ]
             },
             /*{
@@ -471,7 +509,7 @@ export default {
               args: [
                 {
                   name: "enabled",
-                  desc: "Enable or disable guildsync for the current server",
+                  desc: "Enable or disable guildsync for this server",
                   required: true,
                   options: [
                     "False",
@@ -488,10 +526,10 @@ export default {
           subcommands: [
             {
               name: "add",
-              desc: "Adds your API key and associates it with your Discord account",
+              desc: "Adds a key and associates it with your Discord account",
               args: [
                 {
-                  name: "key",
+                  name: "token",
                   desc: "Generate at <a href='https://account.arena.net' target='_blank'>https://account.arena.net</a> under Applications tab",
                   required: true
                 }
@@ -499,19 +537,27 @@ export default {
             },
             {
               name: "info",
-              desc: "Information about your current API key"
+              desc: "Information about your API keys"
             },
             {
               name: "remove",
-              desc: "Remove selected keys from the bot"
+              desc: "Remove selected keys from the bot",
+              args: [
+                {
+                  name: "token",
+                  desc: "Key to remove",
+                  required: true
+                }
+              ]
             },
             {
               name: "switch",
-              desc: "Swaps between your stored API keys",
+              desc: "Swaps between multiple stored API keys",
               args: [
                 {
-                  name: "index",
-                  desc: "Key index to switch to. Skip to get a list instead"
+                  name: "token",
+                  desc: "Key to switch to",
+                  required: true
                 }
               ]
             }
@@ -519,7 +565,7 @@ export default {
         },
         {
           name: "kp",
-          desc: "Shows completed raids and fractals",
+          desc: "Shows completed raids, fractals, and strikes",
           permissions: [
             "progression"
           ]
@@ -558,15 +604,15 @@ export default {
                   name: "profession",
                   desc: "Select a profession to view specific statistics",
                   options: [
-                    "Warrior",
+                    "Elementalist",
+                    "Engineer",
                     "Guardian",
+                    "Mesmer",
+                    "Necromancer",
+                    "Ranger",
                     "Revenant",
                     "Thief",
-                    "Ranger",
-                    "Engineer",
-                    "Elementalist",
-                    "Necromancer",
-                    "Mesmer"
+                    "Warrior"
                   ]
                 }
               ]
@@ -591,7 +637,7 @@ export default {
               args: [
                 {
                   name: "character",
-                  desc: "Displays missing SAB unlocks for specified character",
+                  desc: "Character name",
                   required: true
                 }
               ]
@@ -602,7 +648,7 @@ export default {
               args: [
                 {
                   name: "character",
-                  desc: "Displays missing SAB zones for specified character",
+                  desc: "Character name",
                   required: true
                 }
               ]
@@ -611,7 +657,7 @@ export default {
         },
         {
           name: "search",
-          desc: "Search your account for items",
+          desc: "Find items on your account",
           permissions: [
             "characters",
             "inventories"
@@ -630,7 +676,7 @@ export default {
           subcommands: [
             {
               name: "api_key_role",
-              desc: "Automatically add a role to members that have added an API key to the bot",
+              desc: "A feature to automatically add a role to members that have added an API key to the bot",
               args: [
                 {
                   name: "enabled",
@@ -643,21 +689,20 @@ export default {
                 },
                 {
                   name: "role",
-                  desc: "The role that will be given to members with an API key added",
-                  required: true
+                  desc: "The role that will be given to members with an API key added"
                 }
               ]
             },
             {
               name: "force_account_names",
-              desc: "Automatically change nicknames to in-game names",
+              desc: "Automatically change all server member nicknames to in-game names",
               permissions: [
                 "account"
               ],
               args: [
                 {
                   name: "enabled",
-                  desc: "Automatically change nicknames to in-game names",
+                  desc: "Enable or disable automatically changing user nicknames to match in-game account name",
                   required: true,
                   options: [
                     "False",
@@ -668,7 +713,7 @@ export default {
             },
             {
               name: "preview_chat_links",
-              desc: "Enable or disable automatic GW2 chat link preview from Discord messages",
+              desc: "Enable or disable automatic GW2 chat link preview",
               args: [
                 {
                   name: "enabled",
@@ -682,8 +727,8 @@ export default {
               ]
             },
             {
-              name: "sync",
-              desc: "Force a sync for any guildsyncs and worldsyncs you have"
+              name: "sync_now",
+              desc: "Force a sync for any Guildsyncs and Worldsyncs you have"
             },
             /*{
               name: "timezone",
@@ -750,7 +795,7 @@ export default {
           args: [
             {
               name: "trait",
-              desc: "The trait name to search for. Example: Brave Stride",
+              desc: "The trait name to search for. Example: Fresh Air",
               required: true
             }
           ]
@@ -784,7 +829,7 @@ export default {
             }*/
           ]
         },
-        {
+        /*{
           name: "wiki",
           desc: "Search the Guild Wars 2 wiki",
           args: [
@@ -804,18 +849,14 @@ export default {
               ]
             }
           ]
-        },
+        },*/
         {
           name: "worldsync",
-          desc: "World synchronization related commands",
+          desc: "World synchronization related commands: Role management based on in-game account world",
           args: [
             {
-              name: "ally_role",
-              desc: "Specify a role to be given to allies of the chosen world"
-            },
-            {
               name: "enabled",
-              desc: "Enable or disable worldsync",
+              desc: "Enable or disable Worldsync",
               required: true,
               options: [
                 "False",
@@ -823,12 +864,16 @@ export default {
               ]
             },
             {
+              name: "ally_role",
+              desc: "The role to give to allies of the chosen world"
+            },
+            {
               name: "world",
-              desc: "The world name to use for worldsync"
+              desc: "The world name to use for Worldsync"
             },
             {
               name: "world_role",
-              desc: "Specify a role to be given to members of the chosen world"
+              desc: "The role to give to members of the chosen world"
             }
           ]
         },
@@ -854,12 +899,12 @@ export default {
               desc: "List all worlds"
             },*/
             {
-              name: "poptrack",
+              name: "population_track",
               desc: "Receive a notification when a specified world is no longer full",
               args: [
                 {
                   name: "world",
-                  desc: "Specify the name of a World to track the population of",
+                  desc: "Specify the name of a World to track the population of, and recieve a notification when the world is no longer full",
                   required: true
                 }
               ]
@@ -893,11 +938,12 @@ export default {
         },*/
         {
           name: "event_reminder",
-          desc: "For setting up notifications of upcoming events",
+          desc: "Make the bot automatically notify you before an event starts",
           args: [
             {
               name: "event_name",
-              desc: "Event name. Examples: Shadow Behemoth. Gerent Preparation"
+              desc: "Event name. Examples: Shadow Behemoth. Gerent Preparation",
+              required: true
             },
             {
               name: "minutes_before_event",
@@ -928,15 +974,24 @@ export default {
               desc: "Sends the next two bosses every 15 minutes to a channel",
               args: [
                 {
-                  name: "channel",
-                  desc: "The channel to post to. Leave blank to disable, required otherwise"
-                },
-                {
-                  name: "edit",
-                  desc: "Edit the previous message instead of deleting it. If not, posts a new message. Defaults to False",
+                  name: "enabled",
+                  desc: "Enable or disable boss notifier. If enabling, channel argument must be set",
+                  required: true,
                   options: [
                     "False",
                     "True"
+                  ]
+                },
+                {
+                  name: "channel",
+                  desc: "The channel to post to"
+                },
+                {
+                  name: "behavior",
+                  desc: "Select behavior for posting/editing the message. Defaults to posting a new message",
+                  options: [
+                    "Delete the previous day's message. Causes an unread notification",
+                    "Edit the previous day's message. No unread notification, but bad for active channels"
                   ]
                 }
               ]
@@ -946,8 +1001,17 @@ export default {
               desc: "Send daily achievements to a channel every day",
               args: [
                 {
+                  name: "enabled",
+                  desc: "Enable or disable Daily Notifier. If enabling, channel argument must be set",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                },
+                {
                   name: "channel",
-                  desc: "The channel to post to. Leave blank to disable, required otherwise"
+                  desc: "The channel to post to"
                 },
                 {
                   name: "pin_message",
@@ -961,7 +1025,7 @@ export default {
                   name: "behavior",
                   desc: "Select additional behavior for deleting/editing the message. Leave blank for standard behavior",
                   options: [
-                    "Delete the previous day's message. Causes an unread notification",
+                    "Delete the previous day's message and post a new message. Causes an unread notification",
                     "Edit the previous day's message. No unread notification"
                   ]
                 }
@@ -969,7 +1033,7 @@ export default {
             },
             {
               name: "mystic_forger",
-              desc: "Get a personal reminder whenever \"Daily Mystic Forger\" becomes active. Get those Mystic Coins!",
+              desc: "Get a personal reminder whenever Daily Mystic Forger becomes active",
               args: [
                 {
                   name: "reminder_frequency",
@@ -988,8 +1052,21 @@ export default {
               desc: "Automatically sends news from guildwars2.com to a specified channel",
               args: [
                 {
+                  name: "enabled",
+                  desc: "Enable or disable game news notifier. If enabling, channel argument must be set",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                },
+                {
                   name: "channel",
-                  desc: "The channel to post to. Leave blank to disable, required otherwise"
+                  desc: "The channel to post to"
+                },
+                {
+                  name: "mention",
+                  desc: "The role to ping when posting the notification"
                 }
               ]
             },
@@ -998,12 +1075,21 @@ export default {
               desc: "Send a notification whenever the game is updated",
               args: [
                 {
+                  name: "enabled",
+                  desc: "Enable or disable game update notifier. If enabling, channel argument must be set",
+                  required: true,
+                  options: [
+                    "False",
+                    "True"
+                  ]
+                },
+                {
                   name: "channel",
-                  desc: "The channel to post to. Leave blank to disable, required otherwise"
+                  desc: "The channel to post to"
                 },
                 {
                   name: "mention",
-                  desc: "The mention to ping when posting the notification. Can be a role, or everyone, or even a user"
+                  desc: "The role to ping when posting the notification"
                 }
               ]
             }
