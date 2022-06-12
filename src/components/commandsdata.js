@@ -829,7 +829,7 @@ export default {
             }*/
           ]
         },
-        /*{
+        {
           name: "wiki",
           desc: "Search the Guild Wars 2 wiki",
           args: [
@@ -840,16 +840,16 @@ export default {
             },
             {
               name: "language",
-              desc: "The language of the wiki to search on",
+              desc: "The language of the wiki to search on. Defaults to English",
               options: [
-                "en",
-                "de",
-                "fr",
-                "es"
+                "En",
+                "De",
+                "Fr",
+                "Es"
               ]
             }
           ]
-        },*/
+        },
         {
           name: "worldsync",
           desc: "World synchronization related commands: Role management based on in-game account world",
