@@ -443,6 +443,21 @@ export default {
                 }
               ]
             },
+            {
+              name: "diagnose",
+              desc: "Diagnose common issues with your guildsync configuration",
+              args: [
+                {
+                  name: "sync",
+                  desc: "The guildsync to debug",
+                  required: true
+                },
+                {
+                  name: "user",
+                  desc: "The user to test the config of"
+                }
+              ]
+            },
             /*{
               name: "clear",
               desc: "Wipes settings and created roles and turns sync off"
