@@ -3,8 +3,9 @@
 \*---------------------------------------------------------------------------*/
 .feature-media {
   position: relative;
-  padding: 0 0 46% 0;
-  min-height: 540px;
+  //padding: 0 0 46% 0;
+  //min-height: 540px;
+  height: 100vh;
   overflow: hidden;
   &.january,&.february {background: #847270}
   &.march,&.april {background: #9b9795}
@@ -14,9 +15,9 @@
   &.october {background: #513927}
   &.november {background: #65493c}
   &.december {background: #878175}
-  @include media-query('gt-tablet') {
+  /*@include media-query('gt-tablet') {
     min-height: 720px;
-  }
+  }*/
 }
 .feature-media__media {
   position: absolute;
