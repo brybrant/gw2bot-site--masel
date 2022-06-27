@@ -485,7 +485,7 @@ export default {
                 {
                   name: "api_key",
                   desc: "The API key to use for authorization. Use only if you've selected the \"Change API key\" <code>operation</code>"
-                },
+                }
               ]
             },
             /*{
@@ -1155,7 +1155,7 @@ export default {
               desc: "Statistics of the user"
             }
           ]
-        },
+        }
       ]
     };
   },

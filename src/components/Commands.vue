@@ -42,7 +42,7 @@
         </div>
       </div>
       <!--<hr>
-      <h2 class="h3">Meta &amp; Stats</h3>
+      <h2 class="h3">Meta &amp; Stats</h2>
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
