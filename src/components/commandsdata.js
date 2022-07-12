@@ -137,10 +137,14 @@ export default {
               name: "pvpbuild",
               desc: "Displays the build of given character"
             },*/
-            /*{
+            {
               name: "togglepublic",
-              desc: "Toggle your character's status to public"
-            },*/
+              desc: "Toggle your character's (or all of them) status to public",
+              permissions: [
+                "characters",
+                "builds"
+              ]
+            },
             /*{
               name: "wvwbuild",
               desc: "Displays the build of given character"
