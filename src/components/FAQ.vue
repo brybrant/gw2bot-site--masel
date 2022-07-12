@@ -54,7 +54,7 @@
 
       <div class="question">
         <h2 class="h3">The bot is not working! What should I&nbsp;do?</h2>
-        <p>For further help and guidance with GW2Bot, please <a href="https://discord.gg/VyQTrwP" target="_blank">join the support server</a>!</p>
+        <p>For further help and guidance with GW2Bot, please <a :href="supportServerLink" target="_blank">join the support server</a>!</p>
       </div>
     </div>
   </main>
@@ -62,7 +62,7 @@
 
 <script scoped>
 export default {
-  props: ["inviteLink"]
+  props: ["inviteLink", "supportServerLink"]
 };
 </script>
 

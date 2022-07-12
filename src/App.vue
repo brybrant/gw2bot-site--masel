@@ -32,7 +32,7 @@
     </div>
 
     <div class="page">
-      <router-view :invite-link='"https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands"'/>
+      <router-view :invite-link='"https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands"' :support-server-link='"https://discord.gg/VyQTrwP"'/>
       <!--<div class="api-status-bar">
         <div class="page-width page-padding">
           <span id="api-status" title="If API is offline, the bot will not function properly">Checking API...</span>
