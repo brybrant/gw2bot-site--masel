@@ -35,7 +35,7 @@
     }
   }
   .dark-mode & {
-    background: $grey-100;
+    background: $grey-350;
     &.active {
       box-shadow: $navigation-drawer-shadow--dark;
       @include media-query('gt-tablet') {
@@ -61,7 +61,7 @@
   padding: 0 ($baseline-px * .5);
   width: 100%;
   height: $nav-height;
-  color: $grey-300;
+  color: $grey-600;
   text-decoration: none;
   transition: opacity .15s;
   &:hover {
@@ -72,7 +72,7 @@
     }
   }
   &.active {
-    color: $grey-100;
+    color: $grey-200;
     .main-nav__link-name:after {
       width: 100%;
     }
@@ -85,7 +85,7 @@
     }
   }
   .dark-mode & {
-    color: $grey-700;
+    color: $grey-1000;
     &:hover {
       color: color.scale($red-400, $saturation: 100%, $lightness: 42%);
     }

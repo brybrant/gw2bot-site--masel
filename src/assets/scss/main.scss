@@ -16,10 +16,10 @@ html {
   -webkit-text-size-adjust: 100%; /* [3] */
   font-size: 100%;
   line-height: $p-line-rem;
-  color: $grey-100;
+  color: $grey-200;
   background: $white;
   &.dark-mode {
-    color: $white;
+    color: $grey-1200;
     background: $black;
   }
 }
@@ -32,9 +32,9 @@ body {
   padding: 0;
   text-align: center;
   overflow-x: hidden;
-  background: $grey-900;
+  background: $grey-1200;
   .dark-mode & {
-    background: $grey-150;
+    background: $grey-300;
   }
 }
 main {

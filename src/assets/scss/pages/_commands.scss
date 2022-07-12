@@ -15,7 +15,7 @@
 
 .command {
   position: relative;
-  padding: ($baseline-px * .25) ($baseline-px * .5) ($baseline-px * .5) ($baseline-px * .5);
+  padding: ($baseline-px * .25) 8px ($baseline-px * .5) 8px;
   //border: 1px solid $grey-700;
   border-radius: 6px;
   background: $white;
@@ -28,48 +28,48 @@
   }
   button {
     display: inline-block;
-    border: 1px solid $grey-700;
+    border: 1px solid $grey-900;
     background: $white;
-    box-shadow: $button-shadow--light;
+    box-shadow: $button-shadow;
     vertical-align: top;
     &:hover {
-      background: $grey-900;
+      background: $grey-1150;
     }
     &:active {
-      background: $grey-800;
+      background: $grey-1100;
     }
     &.active {
-      color: $grey-900;
-      background: $grey-100;
+      color: $grey-1200;
+      background: $grey-250;
       &:active {
-        background: $black;
+        background: $grey-100;
       }
     }
     .dark-mode & {
-      box-shadow: $button-shadow;
+      box-shadow: $button-shadow--dark;
     }
   }
   .tooltip {
-    right: (-6px);
-    left: (-6px);
+    right: (-8px);
+    left: (-8px);
   }
   .dark-mode & {
-    background: $grey-100;
+    background: $grey-350;
     box-shadow: $card-shadow--dark;
     button {
-      border-color: $grey-300;
-      background: $grey-100;
+      border-color: $grey-200;
+      background: $grey-350;
       &:hover {
-        background: $grey-150;
+        background: $grey-300;
       }
       &:active {
-        background: $grey-50;
+        background: $grey-250;
       }
       &.active {
-        color: $grey-100;
-        background: $white;
+        color: $grey-200;
+        background: $grey-1200;
         &:active {
-          background: $grey-900;
+          background: $grey-1100;
         }
       }
     }
@@ -78,6 +78,7 @@
 .command__name {
   @extend %code-font-family;
   margin: 0;
+  color: $grey-200;
   font-size: $h4-font-rem;
   line-height: ($baseline-px * 2);
   font-weight: 400;
@@ -89,15 +90,18 @@
   }
   span:before {
     content: '\002F';// Forward slash
-    color: $grey-500;
+    color: $grey-800;
+  }
+  .dark-mode & {
+    color: $white;
   }
 }
 .command__desc {
   margin: 2px 0 10px 0;
   line-height: $baseline-px;
-  color: $grey-150;
+  color: $grey-250;
   .dark-mode & {
-    color: $grey-900;
+    color: $grey-1200;
   }
 }
 .command-button {
@@ -111,7 +115,7 @@
     display: inline-block;
     width: ($baseline-px * 2) - 12px;
     height: ($baseline-px * 2) - 12px;
-    background: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' fill='#{$grey-500}'><circle cx='200' cy='300' r='30'/><circle cx='325' cy='300' r='30'/><circle cx='450' cy='300' r='30'/></svg>") 50% 50%/100% 100%;
+    background: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' fill='#{$grey-800}'><circle cx='200' cy='300' r='30'/><circle cx='325' cy='300' r='30'/><circle cx='450' cy='300' r='30'/></svg>") 50% 50%/100% 100%;
     vertical-align: top;
   }
 }
@@ -126,16 +130,16 @@
   position: relative;
   margin: 12px 0 0 0;
   padding: 12px 0;
-  border-top: 1px solid $grey-700;
+  border-top: 1px solid $grey-900;
   & ~ .subcommand {
     margin: 0;
   }
   .tooltip {
-    right: (-18px);
-    left: (-18px);
+    right: (-16px);
+    left: (-16px);
   }
   .dark-mode & {
-    border-top-color: $grey-300;
+    border-top-color: $grey-100;
   }
 }
 .subcommand__name {
@@ -148,7 +152,7 @@
     line-height: $baseline-px - 4px;
   }
   span {
-    color: $grey-500;
+    color: $grey-800;
     &:before {
       content: '\002F';// Forward slash
     }
@@ -172,10 +176,10 @@
   margin: 0;
   padding: 12px 0;
   & ~ .arg {
-    border-top: 1px solid $grey-700;
+    border-top: 1px solid $grey-900;
   }
   .dark-mode & {
-    border-top-color: $grey-300;
+    border-top-color: $grey-100;
   }
 }
 .arg__name {
@@ -185,7 +189,7 @@
   white-space: nowrap;
   letter-spacing: -0.3px;
   span {
-    color: $grey-500;
+    color: $grey-800;
     font-weight: 400;
   }
 }
@@ -194,11 +198,11 @@
   display: inline-block;
   padding: 0;
   margin: 6px 0 0 0;
-  border: 1px solid $grey-800;
+  border: 1px solid $grey-1000;
   border-radius: 8px;
   list-style: none;
   .dark-mode & {
-    border-color: $grey-300;
+    border-color: $grey-200;
   }
 }
 .option {
@@ -214,7 +218,7 @@
     border-radius: 50%;
   }
   & ~ .option {
-    border-top: 1px solid $grey-800;
+    border-top: 1px solid $grey-1000;
   }
   .dark-mode & {
     border-top-color: $grey-200;
@@ -225,7 +229,7 @@
   display: inline-block;
   margin: 4px 0 0 0;
   padding: 4px 8px 0 8px;
-  border-top: 1px solid $grey-800;
+  border-top: 1px solid $grey-1000;
   .dark-mode & {
     border-color: $grey-200;
   }

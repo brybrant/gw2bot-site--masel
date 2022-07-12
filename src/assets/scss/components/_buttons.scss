@@ -57,6 +57,9 @@ button {// Taken from Normalise.css
     vertical-align: top;
     pointer-events: none;
   }
+  .dark-mode & {
+    box-shadow: $button-shadow--dark;
+  }
 }
 
 /*---------------------------------------------------------------------------*\

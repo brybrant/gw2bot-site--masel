@@ -7,8 +7,8 @@ footer {
   padding: $baseline-rem 0 ($baseline-rem * 2) 0;
   text-align: center;
   width: 100%;
-  background: $grey-800;
+  background: $grey-1100;
   .dark-mode & {
-    background: $grey-100;
+    background: $grey-250;
   }
 }

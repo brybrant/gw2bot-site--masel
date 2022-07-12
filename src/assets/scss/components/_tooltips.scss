@@ -4,8 +4,8 @@
 .tooltip {
   position: absolute;
   bottom: calc(100% - 2px);
-  padding: 6px 12px;
-  //border-top: 1px solid $grey-700;
+  padding: 3px 8px;
+  border-top: 1px solid $grey-1000;
   border-radius: 12px;
   background: $white;
   box-shadow: $tooltip-shadow;
@@ -29,7 +29,7 @@
   }
   &:before {
     margin-left: (-10px);
-    border-top: 10px solid $grey-700;
+    border-top: 10px solid $grey-900;
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
   }
@@ -40,13 +40,14 @@
     border-left: 8px solid transparent;
   }
   .dark-mode & {
-    background: $grey-100;
+    border-color: $grey-200;
+    background: $grey-350;
     box-shadow: $tooltip-shadow--dark;
     &:before {
-      border-top-color: $grey-50;
+      border-top-color: $grey-250;
     }
     &:after {
-      border-top-color: $grey-100;
+      border-top-color: $grey-350;
     }
   }
 }
