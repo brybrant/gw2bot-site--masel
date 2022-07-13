@@ -135,6 +135,12 @@ const commands = {
           permissions: [
             "characters",
             "builds"
+          ],
+          args: [
+            {
+              name: "character_or_all",
+              desc: "Name of character to toggle public status, or type 'all' keyword"
+            }
           ]
         },
         /*{
