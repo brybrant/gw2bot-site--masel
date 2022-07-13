@@ -32,7 +32,7 @@
 
         <li><strong>To provide a personalised experience:</strong> We may use your <abbr>GW2</abbr> <abbr>API</abbr>&nbsp;key to fetch data from <a href="https://wiki.guildwars2.com/wiki/API:Main#Authentication" target="_blank">authenticated <abbr>GW2</abbr> <abbr>API</abbr> endpoints</a> to provide an experience that is unique and relevant to&nbsp;you. Some examples include searching for an item on your <abbr>GW2</abbr> account, checking your weekly raid progression, and synchronizing your in-game Guild&nbsp;Ranks with Roles in your Discord&nbsp;Server.</li>
 
-        <li><strong>To provide convenience and quality of life&nbsp;features:</strong> We may store your GW2Bot preferences to provide convenience and quality of life features such as sending you opt-in notifications for game events, gem price changes, and other special occurences such as Daily Mystic&nbsp;Forger.</li>
+        <li><strong>To provide convenience and quality of life&nbsp;features:</strong> We may store your GW2Bot preferences to provide convenience and quality of life features such as sending you opt-in notifications for game events, gem price changes, and other special occurrences such as Daily Mystic&nbsp;Forger.</li>
       </ul>
 
       <h2 id="data-retention" class="anchor">Data Retention</h2>
