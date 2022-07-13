@@ -54,18 +54,6 @@ main {
 @import 'components/vertical-align';
 @import 'components/tooltips';
 @import 'components/hr';
-@import 'components/footer';
-
-@import 'pages/index';
-@import 'pages/commands';
-@import 'pages/faq';
-
-.patreon {
-  padding-top: $baseline-rem;
-  .flexbox__item {
-    margin-top: $baseline-rem;
-  }
-}
 
 .sr-only {
   position: absolute !important;

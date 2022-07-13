@@ -15,7 +15,7 @@
 
       <p>GW2Bot requires access to Discord message content to enable <a href="https://wiki.guildwars2.com/wiki/Chat_link_format" target="_blank"><abbr>GW2</abbr> chat link</a> functionality within&nbsp;Discord. This means that GW2Bot can see your messages, but it cannot <em>&ldquo;read&rdquo;</em> or understand your messages; GW2Bot only searches new messages for a&nbsp;valid <abbr>GW2</abbr> chat link and then responds with the appropriate <abbr>GW2</abbr> game element if one is found, otherwise the message is disregarded. You can disable this feature by using the <code>/server preview_chat_links</code> command. <strong>GW2Bot does not record your message content and never&nbsp;will.</strong></p>
 
-      <p>We reserve the right to change this privacy policy from time to&nbsp;time. If we make any changes to this privacy policy, we will notify you by means of an announcement on the <a :href="supportServerLink" target="_blank">GW2Bot Discord Server</a> prior to the changes becoming effective, which will give you the opportunity to review the changes before you choose to continue using&nbsp;GW2Bot. You will also receive a direct message about the changes from GW2Bot when you first interact with GW2Bot after this privacy policy is&nbsp;updated. You can always find a link to this privacy policy in the footer of every page on this website, or by using GW2Bot&rsquo;s <code>/help</code>&nbsp;command.</p>
+      <p>We reserve the right to change this privacy policy from time to&nbsp;time. If we make any changes to this privacy policy, we will notify you by means of an announcement on the <a :href="$supportServerLink" target="_blank">GW2Bot Discord Server</a> prior to the changes becoming effective, which will give you the opportunity to review the changes before you choose to continue using&nbsp;GW2Bot. You will also receive a direct message about the changes from GW2Bot when you first interact with GW2Bot after this privacy policy is&nbsp;updated. You can always find a link to this privacy policy in the footer of every page on this website, or by using GW2Bot&rsquo;s <code>/help</code>&nbsp;command.</p>
 
       <h2 id="what-data-do-we-collect" class="anchor">What Data Do We&nbsp;Collect?</h2>
 
@@ -59,16 +59,10 @@
         <li><strong>The right to data portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
       </ul>
 
-      <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us via the <a :href="supportServerLink" target="_blank">GW2Bot Discord&nbsp;Server</a>.</p>
+      <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us via the <a :href="$supportServerLink" target="_blank">GW2Bot Discord&nbsp;Server</a>.</p>
     </div>
   </main>
 </template>
-
-<script scoped>
-export default {
-  props: ["supportServerLink"]
-};
-</script>
 
 <style scoped>
 p, li {

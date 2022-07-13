@@ -7,7 +7,7 @@
 
       <div class="question">
         <h2 class="h3">How do I use the bot?</h2>
-        <p>After the bot has been added to the server using <a :href="inviteLink">this invite link</a>, you can access the commands by using the <code>/</code> prefix.</p>
+        <p>After the bot has been added to the server using <a :href="$inviteLink">this invite link</a>, you can access the commands by using the <code>/</code> prefix.</p>
         <p><strong>Type <code>/</code> for a full list of commands.</strong></p>
       </div>
 
@@ -54,15 +54,28 @@
 
       <div class="question">
         <h2 class="h3">The bot is not working! What should I&nbsp;do?</h2>
-        <p>For further help and guidance with GW2Bot, please <a :href="supportServerLink" target="_blank">join the support server</a>!</p>
+        <p>For further help and guidance with GW2Bot, please <a :href="$supportServerLink" target="_blank">join the support server</a>!</p>
       </div>
     </div>
   </main>
 </template>
 
-<script scoped>
-export default {
-  props: ["inviteLink", "supportServerLink"]
-};
-</script>
+<style lang="scss" scoped>
+@import '~@/assets/scss/colors';
+@import '~@/assets/scss/settings';
 
+.question {
+  margin: $baseline-rem 0 0 0;
+  padding: $baseline-rem ($gutter-px * .5) $baseline-rem ($gutter-px * .5);
+  border-radius: 6px;
+  background: $white;
+  box-shadow: $card-shadow;
+  h2 {
+    margin: 0;
+  }
+  .dark-mode & {
+    background: $grey-350;
+    box-shadow: $card-shadow--dark;
+  }
+}
+</style>

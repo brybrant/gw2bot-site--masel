@@ -8,6 +8,10 @@ Vue.use(LoadScript);
 
 Vue.config.productionTip = false;
 
+Vue.prototype.$inviteLink = "https://discord.com/api/oauth2/authorize?client_id=310050883100737536&permissions=939879488&scope=bot%20applications.commands";
+
+Vue.prototype.$supportServerLink = "https://discord.gg/VyQTrwP";
+
 Vue.filter("twoOrphans",function(text) {
   // Replace the last whitespace character with a non-breaking space to force a
   // minimum of two orphan words in a given block of text

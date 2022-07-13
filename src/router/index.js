@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "@/components/Home.vue";
-import Commands from "@/components/Commands.vue";
-import FAQ from "@/components/FAQ.vue";
-import PrivacyPolicy from "@/components/Privacy-Policy.vue";
+import Home from "@/pages/Home.vue";
+import Commands from "@/pages/Commands.vue";
+import FAQ from "@/pages/FAQ.vue";
+import PrivacyPolicy from "@/pages/PrivacyPolicy.vue";
 
 Vue.use(Router);
 
