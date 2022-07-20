@@ -927,11 +927,7 @@ const commands = {
           ]
         }
       ]
-    },
-    /*{
-      name: "help",
-      desc: "Shows the commands menu"
-    }*/
+    }
   ],
   notifiers: [
     /*{
@@ -1133,6 +1129,10 @@ const commands = {
   ],
   meta: [
     {
+      name: "help",
+      desc: "Basic information about the bot"
+    },
+    /* {
       name: "info",
       desc: "Display bot's info"
     },
@@ -1143,18 +1143,32 @@ const commands = {
     {
       name: "uptime",
       desc: "Display bot's uptime"
-    },
+    }, */
     {
-      name: "stats",
-      desc: "Statistic related commands",
-      args: [
+      name: "botstatistics",
+      desc: "Bot statistic related commands",
+      subcommands: [
+        {
+          name: "global",
+          desc: "Total stats of the bot's command usage"
+        },
         {
           name: "server",
-          desc: "Statistics of this server"
+          desc: "Command usage statistics of this Discord server"
         },
         {
           name: "user",
-          desc: "Statistics of the user"
+          desc: "Your own personal bot usage statistics",
+          args: [
+            {
+              name: "reveal",
+              desc: "Post the response as a publicly visible message. Defaults to False",
+              options: [
+                "False",
+                "True"
+              ]
+            }
+          ]
         }
       ]
     }

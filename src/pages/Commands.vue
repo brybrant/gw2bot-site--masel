@@ -33,7 +33,7 @@
           </ul>
         </div>
       </div>
-      <!--<hr>
+      <hr>
       <h2 class="h3">Meta &amp; Stats</h2>
       <div class="flexbox">
         <div class="flexbox__item commands-column">
@@ -46,7 +46,7 @@
             <CommandComponent v-for="command in columnTwo(commands.meta)" :key="command.name" :command="command"/>
           </ul>
         </div>
-      </div>-->
+      </div>
     </div>
   </main>
 </template>
