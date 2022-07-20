@@ -4,7 +4,7 @@
       <p class="arg__name">
         {{ arg.name }} <span>{{ "("+(arg.required?"required":"optional")+")" }}</span>
       </p>
-      <p class="small-text">
+      <p class="arg__desc small-text">
         {{ arg.desc | twoOrphans }}{{ arg.options?":":"." }}
       </p>
       <ul v-if="arg.options" class="option-list">
@@ -41,7 +41,7 @@ export default {
 }
 .arg {
   margin: 0;
-  padding: 12px 4px;
+  padding: 12px 0;
   & ~ .arg {
     border-top: 1px solid $grey-1000;
   }
@@ -60,11 +60,14 @@ export default {
     font-weight: 400;
   }
 }
+.arg__desc {
+  padding: 0 4px;
+}
 
 .option-list {
   display: inline-block;
   padding: 0;
-  margin: 6px 0 0 0;
+  margin: 6px 8px 0 8px;
   border: 1px solid $grey-1000;
   border-radius: 8px;
   list-style: none;

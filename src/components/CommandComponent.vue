@@ -1,6 +1,12 @@
 <template>
   <li class="command">
     <div v-if="command.args" class="tooltip" :class="{active: command.active}" :id="command.name+'-tooltip'">
+      <button
+        class="tooltip__close"
+        :aria-controls="command.name+'-tooltip'"
+        title="Close"
+        @click="hideTooltip(command)"
+      />
       <CommandArgumentsComponent :command="command"/>
     </div>
 
@@ -44,6 +50,12 @@
     <ul v-if="command.subcommands" v-show="command.active" class="subcommand-list" :id="command.name+'-subcommands'">
       <li v-for="(subcommand, index) in command.subcommands" :key="`subcommand-${index}`" class="subcommand">
         <div v-if="subcommand.args" :id="command.name+'-'+subcommand.name+'-tooltip'" class="tooltip" :class="{active: subcommand.active}">
+          <button
+            class="tooltip__close"
+            :aria-controls="command.name+'-'+subcommand.name+'-tooltip'"
+            title="Close"
+            @click="hideTooltip(subcommand)"
+          />
           <CommandArgumentsComponent :command="subcommand"/>
         </div>
 
@@ -61,7 +73,7 @@
             {{ "+"+subcommand.args.length }}
           </button>
         </p>
-        <p class="small-text">{{ subcommand.desc | twoOrphans }}</p>
+        <p class="subcommand__desc small-text">{{ subcommand.desc | twoOrphans }}</p>
 
         <div v-if="subcommand.permissions" class="permissions">
           <p class="small-text">
@@ -95,6 +107,9 @@ export default {
       } else if (!thing.active) {
         Vue.set(thing, "active", true);
       }
+    },
+    hideTooltip (thing) {
+      thing.active = false;
     }
   }
 };
@@ -190,6 +205,7 @@ export default {
 }
 .command__desc {
   margin: 2px 0 10px 0;
+  padding: 0 4px;
   line-height: $baseline-px;
   color: $grey-250;
   .dark-mode & {
@@ -249,6 +265,9 @@ export default {
       content: '\002F';// Forward slash
     }
   }
+}
+.subcommand__desc {
+  padding: 0 4px;
 }
 
 .args-button {
