@@ -1,3 +1,4 @@
+@use 'sass:color';
 /*---------------------------------------------------------------------------*\
     Colours
 \*---------------------------------------------------------------------------*/
@@ -39,3 +40,6 @@ $red-medium: #d72d1c;*/
 $patreon-fiery-coral: #ff424d;// Patreon official "fiery coral" color
 
 $paypal-pal-blue: #0079c1;// PayPal official "pal" blue color
+
+$link: color.scale($red-500, $saturation: 100%);
+$link-dark: color.scale($red-700, $saturation: 100%, $lightness: 40%);

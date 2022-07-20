@@ -1,17 +1,28 @@
-@use 'sass:color';
+@use 'sass:math';
 /*---------------------------------------------------------------------------*\
     Typography
 \*---------------------------------------------------------------------------*/
 a {
   // Remove the gray background on active links in IE 10.
   background-color: transparent;
-  color: $red-500;
+  color: $link;
   text-decoration: underline;
   &:hover {
     text-decoration: none;
   }
   .dark-mode & {
-    color: color.scale($red-700, $saturation: 100%, $lightness: 40%);
+    color: $link-dark;
+  }
+  &.external:after {
+    @extend %psuedo-element;
+    display: inline-block;
+    width: math.div($p-line-rem, 1.5);
+    height: $p-line-rem;
+    vertical-align: top;
+    background: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='#{$link}'><path d='M385,415H185V215h95l-30-30h-65c-16.57,0-30,13.43-30,30v200c0,16.57,13.43,30,30,30h200c16.57,0,30-13.43,30-30v-65l-30-30v95Z'/><polygon points='300 150 335 185 390 185 240 335 265 360 415 210 415 270 445 300 445 150 300 150'/></svg>") 50% 50%/cover;
+    .dark-mode & {
+      background-image: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='#{$link-dark}'><path d='M385,415H185V215h95l-30-30h-65c-16.57,0-30,13.43-30,30v200c0,16.57,13.43,30,30,30h200c16.57,0,30-13.43,30-30v-65l-30-30v95Z'/><polygon points='300 150 335 185 390 185 240 335 265 360 415 210 415 270 445 300 445 150 300 150'/></svg>")
+    }
   }
 }
 dfn {
@@ -61,10 +72,6 @@ h2, .h2 {
   font-size: $h2-font-rem;
   line-height: $h2-line-rem;
 }
-h2.anchor {
-  margin-top: -$nav-height;
-  padding-top: $nav-height + $h2-margin-px;
-}
 h3, .h3 {
   margin: $h3-margin-rem 0 0 0;
   font-size: $h3-font-rem;
@@ -95,6 +102,10 @@ small, .small-text {
   font-size: $small-font-rem;
   line-height: $small-line-rem;
   vertical-align: top;
+  a.external:after {
+    width: math.div($small-line-rem, 1.5);
+    height: $small-line-rem;
+  }
 }
 .smaller {
   font-size: $x-small-font-rem;
