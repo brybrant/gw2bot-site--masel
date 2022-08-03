@@ -662,6 +662,9 @@ const commands = {
         {
           name: "default_guild",
           desc: "Set your default guild for guild commands on this server",
+          permissions: [
+            "guilds"
+          ],
           args: [
             {
               name: "guild",
