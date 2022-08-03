@@ -313,17 +313,6 @@ const commands = {
       ],
       subcommands: [
         {
-          name: "default",
-          desc: "Set your default guild for guild commands on this server",
-          args: [
-            {
-              name: "guild",
-              desc: "Guild name",
-              required: true
-            }
-          ]
-        },
-        {
           name: "info",
           desc: "General guild stats",
           args: [
@@ -671,6 +660,17 @@ const commands = {
           ]
         },
         {
+          name: "default_guild",
+          desc: "Set your default guild for guild commands on this server",
+          args: [
+            {
+              name: "guild",
+              desc: "Guild name",
+              required: true
+            }
+          ]
+        },
+        {
           name: "force_account_names",
           desc: "Automatically change all server member nicknames to in-game names",
           permissions: [
@@ -863,17 +863,39 @@ const commands = {
   ],
   notifiers: [
     {
-      name: "event_reminder",
-      desc: "Make the bot automatically notify you before an event starts",
-      args: [
+      name: "reminder",
+      desc: "For setting up automatic personal notifications",
+      subcommands: [
         {
-          name: "event_name",
-          desc: "Event name. Examples: Shadow Behemoth. Gerent Preparation",
-          required: true
+          name: "event",
+          desc: "Make the bot automatically notify you before an event starts",
+          args: [
+            {
+              name: "event_name",
+              desc: "Event name. Examples: Shadow Behemoth. Gerent Preparation",
+              required: true
+            },
+            {
+              name: "minutes_before_event",
+              desc: "The number of minutes before the event that you'll be notified at"
+            }
+          ]
         },
         {
-          name: "minutes_before_event",
-          desc: "The number of minutes before the event that you'll be notified at"
+          name: "mystic_forger",
+          desc: "Get a personal reminder whenever Daily Mystic Forger becomes active",
+          args: [
+            {
+              name: "reminder_frequency",
+              desc: "Select when you want to be notified",
+              required: true,
+              options: [
+                "Disable the Mystic Forger reminder",
+                "Get a message about Mystic Forger when it becomes active",
+                "Get a message about Mystic Forger when it becomes active AND 24 hours before that"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -939,22 +961,6 @@ const commands = {
               options: [
                 "Delete the previous day's message and post a new message. Causes an unread notification",
                 "Edit the previous day's message. No unread notification"
-              ]
-            }
-          ]
-        },
-        {
-          name: "mystic_forger",
-          desc: "Get a personal reminder whenever Daily Mystic Forger becomes active",
-          args: [
-            {
-              name: "reminder_frequency",
-              desc: "Select when you want to be notified",
-              required: true,
-              options: [
-                "Disable the Mystic Forger reminder",
-                "Get a message about Mystic Forger when it becomes active",
-                "Get a message about Mystic Forger when it becomes active AND 24 hours before that"
               ]
             }
           ]
