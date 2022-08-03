@@ -35,18 +35,10 @@ const commands = {
         "progression"
       ]
     },
-    /*{
-      name: "changelog",
-      desc: "List of recent changes to the bot"
-    },*/
     {
       name: "character",
       desc: "Character related commands",
       subcommands: [
-        /*{
-          name: "attributes",
-          desc: "Lists attributes of given character"
-        },*/
         {
           name: "birthdays",
           desc: "Lists days until the next birthday for each of your characters",
@@ -125,10 +117,6 @@ const commands = {
             }
           ]
         },
-        /*{
-          name: "pvpbuild",
-          desc: "Displays the build of given character"
-        },*/
         {
           name: "togglepublic",
           desc: "Toggle your character's (or all of them) status to public",
@@ -142,11 +130,7 @@ const commands = {
               desc: "Name of character to toggle public status, or type 'all' keyword"
             }
           ]
-        },
-        /*{
-          name: "wvwbuild",
-          desc: "Displays the build of given character"
-        }*/
+        }
       ]
     },
     {
@@ -205,10 +189,6 @@ const commands = {
         }
       ]
     },
-    /*{
-      name: "dulfy",
-      desc: "Search dulfy.net"
-    },*/
     {
       name: "et",
       desc: "Event timer",
@@ -460,10 +440,6 @@ const commands = {
             }
           ]
         },
-        /*{
-          name: "clear",
-          desc: "Wipes settings and created roles and turns sync off"
-        },*/
         {
           name: "edit",
           desc: "Change settings and delete guildsyncs",
@@ -490,14 +466,6 @@ const commands = {
             }
           ]
         },
-        /*{
-          name: "guildrole",
-          desc: "Adds a new role based on the guild tag for channel management"
-        },*/
-        /*{
-          name: "now",
-          desc: "Force a synchronization, also deletes or creates new ranks as needed"
-        },*/
         {
           name: "purge",
           desc: "Toggle kicking of users that are not in any of the synced guilds",
@@ -516,10 +484,6 @@ const commands = {
             }
           ]
         },
-        /*{
-          name: "setup",
-          desc: "Setup process for ingame roster to Discord member list synchronization"
-        },*/
         {
           name: "toggle",
           desc: "Global toggle for guildsync - does not wipe the settings",
@@ -602,10 +566,6 @@ const commands = {
         "progression"
       ]
     },
-    /*{
-      name: "prefix",
-      desc: "Set bot's prefixes for this server"
-    },*/
     {
       name: "pvp",
       desc: "Commands related to PvP",
@@ -746,11 +706,7 @@ const commands = {
         {
           name: "sync_now",
           desc: "Force a sync for any Guildsyncs and Worldsyncs you have"
-        },
-        /*{
-          name: "timezone",
-          desc: "Change the timezone bot will use in this server"
-        }*/
+        }
       ]
     },
     {
@@ -775,10 +731,6 @@ const commands = {
             "tradingpost"
           ]
         },
-        /*{
-          name: "current",
-          desc: "Show current selling/buying transactions"
-        },*/
         {
           name: "delivery",
           desc: "Show your items awaiting in delivery box",
@@ -824,26 +776,10 @@ const commands = {
         "wallet"
       ],
       args: [
-        /*{
-          name: "currencies",
-          desc: "Returns a list of all currencies"
-        },*/
         {
           name: "currency",
           desc: "The specific currency to search for. Leave blank for general overview"
-        },
-        /*{
-          name: "maps",
-          desc: "Shows map-specific currencies"
-        },*/
-        /*{
-          name: "show",
-          desc: "Shows most important currencies in your wallet"
-        },*/
-        /*{
-          name: "tokens",
-          desc: "Shows instance-specific currencies"
-        }*/
+        }
       ]
     },
     {
@@ -911,10 +847,6 @@ const commands = {
             }
           ]
         },
-        /*{
-          name: "worlds",
-          desc: "List all worlds"
-        },*/
         {
           name: "population_track",
           desc: "Receive a notification when a specified world is no longer full",
@@ -930,25 +862,6 @@ const commands = {
     }
   ],
   notifiers: [
-    /*{
-      name: "bossnotifier",
-      desc: "Sends the next two bosses every 15 minutes to a channel",
-      args: {
-        channel: "Sets the channel to send the bosses to",
-        toggle: "Toggles posting upcoming bosses"
-      }
-    },*/
-    /*{
-      name: "dailynotifier",
-      desc: "Sends a list of dailies to specified channel",
-      args: {
-        channel: "Sets the channel to send the dailies to",
-        toggle: "Toggles posting dailies at server reset",
-        autodelete: "Toggles autodeleting last day's daily notification",
-        autopin: "Toggles autopinning daily notifications",
-        categories: "Choose which categories to display on daily notifications"
-      }
-    },*/
     {
       name: "event_reminder",
       desc: "Make the bot automatically notify you before an event starts",
@@ -964,20 +877,6 @@ const commands = {
         }
       ]
     },
-    /*{
-      name: "newsfeed",
-      desc: "For setting up automatic guildwars2.com news feed",
-      args: [
-        {
-          name: "channel",
-          desc: "Sets the channel to send the news to"
-        },
-        {
-          name: "toggle",
-          desc: "Toggles posting news"
-        }
-      ]
-    },*/
     {
       name: "notifier",
       desc: "For setting up automatic notifications",
@@ -1107,43 +1006,13 @@ const commands = {
           ]
         }
       ]
-    },
-    /*{
-      name: "updatenotifier",
-      desc: "For setting up notifcations whenever the game updates",
-      args: [
-        {
-          name: "channel",
-          desc: "Sets the channel to send the update announcement"
-        },
-        {
-          name: "mention",
-          desc: "Change the type of mention to be included with update notifier"
-        },
-        {
-          name: "toggle",
-          desc: "Toggles sending game update notifications"
-        }
-      ]
-    }*/
+    }
   ],
   meta: [
     {
       name: "help",
       desc: "Basic information about the bot"
     },
-    /* {
-      name: "info",
-      desc: "Display bot's info"
-    },
-    {
-      name: "ping",
-      desc: "Pong!"
-    },
-    {
-      name: "uptime",
-      desc: "Display bot's uptime"
-    }, */
     {
       name: "botstatistics",
       desc: "Bot statistic related commands",
