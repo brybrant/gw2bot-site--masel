@@ -1,5 +1,5 @@
 <template>
-  <main id="commands">
+  <main>
     <div class="page-width page-padding">
       <header>
         <h1>GW2Bot Commands</h1>
@@ -20,7 +20,9 @@
         </div>
       </div>
       <hr>
-      <h2 class="h3">Notifiers</h2>
+      <h2 class="h3">
+        Notifiers
+      </h2>
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
@@ -34,7 +36,9 @@
         </div>
       </div>
       <hr>
-      <h2 class="h3">Meta &amp; Stats</h2>
+      <h2 class="h3">
+        Meta &amp; Stats
+      </h2>
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
@@ -64,6 +68,13 @@ export default {
       commands
     };
   },
+  head: {
+    title: {
+      inner: "Commands",
+      separator: "|",
+      complement: "GW2Bot"
+    }
+  },
   methods: {
     columnOne(commands) {
       return commands.filter(function(command,index) {
@@ -86,7 +97,7 @@ export default {
 
 .commands-column {
   width: 100%;
-  @include media-query('gt-tablet') {
+  @include media-query('gt-800') {
     width: 50%;
   }
 }

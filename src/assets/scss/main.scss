@@ -47,11 +47,8 @@ main {
 @import 'components/flexbox';
 @import 'components/buttons';
 @import 'components/header';
-//@import 'components/api-check';// Masel says API check is redundant now.
 @import 'components/top-bar';
 @import 'components/navigation';
-@import 'components/feature-section';
-@import 'components/vertical-align';
 @import 'components/tooltips';
 @import 'components/hr';
 
@@ -84,7 +81,7 @@ a, button {
 .page-padding {
   padding-left: ($gutter-px * .5);
   padding-right: ($gutter-px * .5);
-  @include media-query('gt-mobile') {
+  @include media-query('gt-600') {
     padding-left: $gutter-px;
     padding-right: $gutter-px;
   }

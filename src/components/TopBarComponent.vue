@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { set } from "vue";
 
 export default {
   data() {
@@ -65,22 +65,22 @@ export default {
   methods: {
     toggleNavigation(navActive) {
       if (navActive) {
-        Vue.set(this, "navActive", false);
+        set(this, "navActive", false);
       } else {
-        Vue.set(this, "navActive", true);
+        set(this, "navActive", true);
       }
     },
     hideNavigation() {
-      Vue.set(this, "navActive", false);
+      set(this, "navActive", false);
     },
     toggleDarkMode(darkMode) {
       var html = document.documentElement;
       if (darkMode) {
-        Vue.set(this, "darkMode", false);
+        set(this, "darkMode", false);
         html.removeAttribute("class");
         document.cookie = "darkMode=false;SameSite=Strict";
       } else {
-        Vue.set(this, "darkMode", true);
+        set(this, "darkMode", true);
         html.className = "dark-mode";
         document.cookie = "darkMode=true;SameSite=Strict";
       }
@@ -88,9 +88,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.q-kern {
-  letter-spacing: -2px;
-}
-</style>

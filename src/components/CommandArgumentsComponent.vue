@@ -1,14 +1,22 @@
 <template>
   <ul class="arg-list">
-    <li v-for="(arg, index) in command.args" :key="`arg-${index}`" class="arg">
+    <li
+      v-for="(arg, index) in command.args"
+      :key="`arg-${index}`"
+      class="arg"
+    >
       <p class="arg__name">
-        {{ arg.name }} <span>{{ "("+(arg.required?"required":"optional")+")" }}</span>
+        {{ arg.name }} <span>{{ `(${arg.required ? 'required' : 'optional'})` }}</span>
       </p>
       <p class="arg__desc small-text">
-        {{ arg.desc | twoOrphans }}{{ arg.options?":":"." }}
+        {{ arg.desc | twoOrphans }}{{ arg.options ? ":" : "." }}
       </p>
       <ul v-if="arg.options" class="option-list">
-        <li v-for="(option, index2) in arg.options" :key="`option-${index2}`" class="option small-text">
+        <li
+          v-for="(option, index2) in arg.options"
+          :key="`option-${index2}`"
+          class="option small-text"
+        >
           {{ option | twoOrphans }}
         </li>
       </ul>
@@ -56,6 +64,7 @@ export default {
   white-space: nowrap;
   letter-spacing: -0.3px;
   span {
+    font-size: $small-font-rem;
     color: $grey-800;
     font-weight: 400;
   }

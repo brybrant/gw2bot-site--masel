@@ -1,5 +1,5 @@
 <template>
-  <main class="page">
+  <main>
     <div class="page-width page-padding">
       <header>
         <h1>Error 404</h1>
@@ -20,6 +20,18 @@
     </div>
   </main>
 </template>
+
+<script>
+export default {
+  head: {
+    title: {
+      inner: "404",
+      separator: "-",
+      complement: "Not Found"
+    }
+  }
+};
+</script>
 
 <style scoped>
 img {

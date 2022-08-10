@@ -1,5 +1,5 @@
 <template>
-  <main id="policy">
+  <main>
     <div class="page-width page-padding">
       <header>
         <h1>GW2Bot Privacy Policy</h1>
@@ -7,7 +7,9 @@
         <p>Last Updated: July 13, 2022</p>
       </header>
 
-      <p class="small-text italic-text">GW2Bot is an open-source interactive software tool (&ldquo;bot&rdquo;) created for use exclusively with the <a class="external" href="https://discord.com/" target="_blank">Discord</a> application, and is designed to provide helpful features that compliment <a class="external" href="https://www.guildwars2.com" target="_blank">Guild&nbsp;Wars&nbsp;2</a> (<abbr>GW2</abbr>)&nbsp;gameplay.</p>
+      <p class="small-text italic-text">
+        GW2Bot is an open-source interactive software tool (&ldquo;bot&rdquo;) created for use exclusively with the <a class="external" href="https://discord.com/" target="_blank">Discord</a> application, and is designed to provide helpful features that compliment <a class="external" href="https://www.guildwars2.com" target="_blank">Guild&nbsp;Wars&nbsp;2</a> (<abbr>GW2</abbr>)&nbsp;gameplay.
+      </p>
 
       <p>We are committed to protecting your&nbsp;privacy. We understand that you do not want the data you provide to GW2Bot to be distributed indiscriminately and this privacy policy explains how we collect data, what we do with it and what controls you have over&nbsp;it. All of the data we acquire from you is collected and processed in accordance with General Data Protection Regulations&nbsp;(GDPR). <strong>We don&rsquo;t share or sell any of your data to anyone and we&nbsp;never&nbsp;will.</strong></p>
 
@@ -17,13 +19,17 @@
 
       <p>We reserve the right to change this privacy policy from time to&nbsp;time. If we make any changes to this privacy policy, we will notify you by means of an announcement on the <a class="external" :href="$supportServerLink" target="_blank">GW2Bot Discord Server</a> prior to the changes becoming effective, which will give you the opportunity to review the changes before you choose to continue using&nbsp;GW2Bot. You will also receive a direct message about the changes from GW2Bot when you first interact with GW2Bot after this privacy policy is&nbsp;updated. You can always find a link to this privacy policy in the footer of every page on this website, or by using GW2Bot&rsquo;s <code>/help</code>&nbsp;command.</p>
 
-      <h2 id="what-data-do-we-collect" class="anchor">What Data Do We&nbsp;Collect?</h2>
+      <h2 id="what-data-do-we-collect" class="anchor">
+        What Data Do We&nbsp;Collect?
+      </h2>
 
       <p>The data collected by GW2Bot depends on the context of your interactions with GW2Bot and the features you&nbsp;use. GW2Bot automatically collects your usage&nbsp;data for analytical and diagnostic purposes when you interact with&nbsp;GW2Bot.</p>
 
       <p>GW2Bot may also collect and process data that you voluntarily provide, such as your GW2Bot preferences and your <abbr>GW2</abbr> <abbr>API</abbr>&nbsp;key via the&nbsp;<code>/key add</code> command. The data you provide to GW2Bot is securely stored and associated with your Discord User&nbsp;<abbr>ID</abbr> to provide a personalised&nbsp;experience. <a href="#what-are-your-data-protection-rights">Learn more about your data protection&nbsp;rights.</a></p>
 
-      <h2 id="how-will-we-use-your-data" class="anchor">How Will We Use Your&nbsp;Data?</h2>
+      <h2 id="how-will-we-use-your-data" class="anchor">
+        How Will We Use Your&nbsp;Data?
+      </h2>
 
       <p>GW2Bot may use the information that we collect <em>(subject to your usage of GW2Bot)</em> as described&nbsp;below:</p>
 
@@ -35,13 +41,17 @@
         <li><strong>To provide convenience and quality of life&nbsp;features:</strong> We may store your GW2Bot preferences to provide convenience and quality of life features such as sending you opt-in notifications for game events, gem price changes, and other special occurrences such as Daily Mystic&nbsp;Forger.</li>
       </ul>
 
-      <h2 id="data-retention" class="anchor">Data Retention</h2>
+      <h2 id="data-retention" class="anchor">
+        Data Retention
+      </h2>
 
       <p>GW2Bot securely stores <a href="#what-data-do-we-collect">the aforementioned data</a> until it is no longer necessary, or until you request us to erase it &ndash; whichever comes&nbsp;first. This is a case&#8209;by&#8209;case determination that depends on things such as the nature of the data, why it is collected and processed, and relevant legal or operational retention needs.</p>
 
       <p><strong>When you request us to erase your data, we erase all of your data, and you won&rsquo;t be able to recover this information later.</strong></p>
 
-      <h2 id="what-are-your-data-protection-rights" class="anchor">What Are Your Data Protection Rights?</h2>
+      <h2 id="what-are-your-data-protection-rights" class="anchor">
+        What Are Your Data Protection Rights?
+      </h2>
 
       <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the&nbsp;following:</p>
 
@@ -63,6 +73,18 @@
     </div>
   </main>
 </template>
+
+<script>
+export default {
+  head: {
+    title: {
+      inner: "Privacy Policy",
+      separator: "|",
+      complement: "GW2Bot"
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 @import '~@/assets/scss/colors';
