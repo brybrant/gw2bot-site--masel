@@ -1,6 +1,5 @@
 'use strict'
 const utils = require('./utils')
-const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
 const path = require('path')
@@ -23,7 +22,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   },
   // we use webpack-dev-server for logging
   stats: 'none',
-  // cheap-module-eval-source-map is faster for development
+  // eval-cheap-module-source-map is faster for development
   devtool: config.dev.devtool,
   // these devServer options should be customized in /config/index.js
   devServer: {

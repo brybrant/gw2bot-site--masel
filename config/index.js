@@ -6,7 +6,6 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -14,25 +13,17 @@ module.exports = {
       // https://webpack.js.org/configuration/dev-server/#devserverproxy
     },
 
-    // Various Dev Server settings
+    // Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
-    poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+    poll: false, // https://webpack.js.org/configuration/dev-server/#watch
 
-    /**
-     * Source Maps
-     */
-
+    // Source Maps
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
-
-    // If you have problems debugging vue-files in devtools,
-    // set this to false - it *may* help
-    // https://vue-loader.vuejs.org/en/options.html#cachebusting
-    cacheBusting: true,
+    devtool: 'eval-cheap-module-source-map',
 
     cssSourceMap: true
   },
@@ -46,13 +37,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
 
-    /**
-     * Source Maps
-     */
-
+    // Source Maps
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
-    devtool: '#source-map',
+    devtool: 'source-map',
 
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.

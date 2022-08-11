@@ -5,7 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const { VueLoaderPlugin } = require('vue-loader')
 const ESLintPlugin = require('eslint-webpack-plugin')
-
+// https://vue-loader.vuejs.org/
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -17,7 +17,6 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
@@ -34,8 +33,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
@@ -43,27 +41,39 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
+        test: /\.(png|webp|jpe?g|gif|svg)(\?.*)?$/,
+        /*loader: 'url-loader',
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        }*/
+        type: 'asset/resource',
+        generator: {
+          filename: utils.assetsPath('img/[name].[contenthash].[ext]')
         }
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: 'url-loader',
+        /*loader: 'url-loader',
         options: {
           limit: 10000,
           name: utils.assetsPath('media/[name].[hash:7].[ext]')
+        }*/
+        type: 'asset/resource',
+        generator: {
+          filename: utils.assetsPath('media/[name].[contenthash].[ext]')
         }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
+        /*loader: 'url-loader',
         options: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        }*/
+        type: 'asset/resource',
+        generator: {
+          filename: utils.assetsPath('fonts/[name].[contenthash].[ext]')
         }
       }
     ]
@@ -76,15 +86,9 @@ module.exports = {
     })
   ],
   node: {
-    // prevent webpack from injecting useless setImmediate polyfill because Vue
-    // source contains it (although only uses it if it's native).
-    setImmediate: false,
-    // prevent webpack from injecting mocks to Node native modules
-    // that does not make sense for the client
-    dgram: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    child_process: 'empty'
+    // https://webpack.js.org/configuration/node/
+    global: false,
+    __filename: 'warn-mock',
+    __dirname: 'warn-mock'
   }
 }
