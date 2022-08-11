@@ -76,13 +76,8 @@
 
 <script>
 export default {
-  head: {
-    title: {
-      inner: "Privacy Policy",
-      separator: "|",
-      complement: "GW2Bot"
-    }
-  }
+  name: "PrivacyPolicyPage",
+  title: "Privacy Policy | GW2Bot"
 };
 </script>
 

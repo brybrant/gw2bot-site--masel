@@ -23,13 +23,7 @@
 
 <script>
 export default {
-  head: {
-    title: {
-      inner: "404",
-      separator: "-",
-      complement: "Not Found"
-    }
-  }
+  title: "404 Not Found"
 };
 </script>
 

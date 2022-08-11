@@ -43,7 +43,12 @@
 </template>
 
 <script scoped>
+import "%/lazysizes/lazysizes.min.js";
+import Rellax from "%/rellax/rellax.min.js";
+
 export default {
+  name: "IndexPage",
+  title: "GW2Bot - A Discord Bot for Guild Wars 2",
   data() {
     return {
       month: ["january","february","march","april","may","june","july","august","september","october","november","december"][(new Date()).getMonth()],
@@ -63,44 +68,28 @@ export default {
       }
     };
   },
-  head: {
-    title: {
-      inner: "GW2Bot",
-      separator: "-",
-      complement: "A Discord Bot for Guild Wars 2"
-    }
-  },
   mounted() {
-    var lazySizesScript = document.createElement("script");
-    lazySizesScript.id = "lazySizesScript";
-    lazySizesScript.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
-    if(!document.getElementById("lazySizesScript")) {
-      document.body.appendChild(lazySizesScript);
+    let resizeTimer;
+
+    const rellax = new Rellax(".feature-media__media",{speed: -4});
+
+    function responsiveRellax() {
+      if(window.innerWidth < 801) {
+        rellax.destroy();
+      } else {
+        rellax.refresh();
+      }
     }
 
-    this.$loadScript("https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js").then(() => {
-      var resizeTimer;
-      // eslint-disable-next-line
-      var rellax = new Rellax(".feature-media__media",{speed: -3});
-
-      function responsiveRellax() {
-        if(window.innerWidth<801) {
-          rellax.destroy();
-        } else {
-          rellax.refresh();
-        }
-      }
-
-      window.addEventListener("resize",function() {
-        clearTimeout(resizeTimer);
-        // Debounce the resize event for performance
-        resizeTimer = setTimeout(function() {
-          responsiveRellax();
-        },250);
-      });
-
-      responsiveRellax();
+    window.addEventListener("resize",function() {
+      clearTimeout(resizeTimer);
+      // Debounce the resize event for performance
+      resizeTimer = setTimeout(function() {
+        responsiveRellax();
+      }, 250);
     });
+
+    responsiveRellax();
   }
 };
 </script>

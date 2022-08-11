@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <TopBarComponent/>
+    <TopBarComponent />
     <div class="page">
-      <router-view/>
+      <router-view />
     </div>
-    <PatreonComponent/>
-    <FooterComponent/>
+    <PatreonComponent />
+    <FooterComponent />
   </div>
 </template>
 
@@ -19,23 +19,6 @@ export default {
     TopBarComponent,
     PatreonComponent,
     FooterComponent
-  },
-  mounted() {
-    // object-fit fallback
-    // dependency: https://github.com/aFarkas/lazysizes
-    if(!("objectFit" in document.documentElement.style)) {
-      document.addEventListener("lazybeforeunveil",function(e) {
-        if(/feature-media__media/.test(e.target.className)) {
-          var imgUrl = e.target.getAttribute("data-src");
-          e.target.style.backgroundImage = "url("+imgUrl+")";
-        }
-      });
-      document.addEventListener("lazyloaded",function(e) {
-        if(/feature-media__media/.test(e.target.className)) {
-          e.target.removeAttribute("src");
-        }
-      });
-    }
   }
 };
 </script>

@@ -27,25 +27,33 @@
               :title="navActive?'Hide navigation':'Show navigation'"
               @click="toggleNavigation(navActive)"
             >
-              <div/>
+              <div />
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mobile-navigation-cover" :class="{active: navActive}" @click="hideNavigation()"/>
+    <div class="mobile-navigation-cover" :class="{active: navActive}" @click="hideNavigation()" />
 
     <div class="page-width">
       <div class="main-nav__container" :class="{active: navActive}">
         <nav class="main-nav" aria-label="Navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement" @click="hideNavigation()">
-          <router-link to="/" class="main-nav__link" active-class="active" itemprop="url" exact><span class="main-nav__link-name">Home</span></router-link>
+          <router-link to="/" class="main-nav__link" active-class="active" itemprop="url" exact>
+            <span class="main-nav__link-name">Home</span>
+          </router-link>
 
-          <router-link to="/commands" class="main-nav__link" active-class="active" itemprop="url"><span class="main-nav__link-name">Commands</span></router-link>
+          <router-link to="/commands" class="main-nav__link" active-class="active" itemprop="url">
+            <span class="main-nav__link-name">Commands</span>
+          </router-link>
 
-          <router-link to="/faq" class="main-nav__link" active-class="active" itemprop="url"><span class="main-nav__link-name">F.A<span class="q-kern">.</span>Q</span></router-link>
+          <router-link to="/faq" class="main-nav__link" active-class="active" itemprop="url">
+            <span class="main-nav__link-name">F.A<span class="q-kern">.</span>Q</span>
+          </router-link>
 
-          <a class="main-nav__link" :href="$supportServerLink" target="_blank" itemprop="url"><span class="main-nav__link-name">Support</span></a>
+          <a class="main-nav__link" :href="$supportServerLink" target="_blank" itemprop="url">
+            <span class="main-nav__link-name">Support</span>
+          </a>
         </nav>
       </div>
     </div>

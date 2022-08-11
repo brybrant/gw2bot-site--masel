@@ -3,10 +3,6 @@
 import Vue from "vue";
 import App from "./App";
 import router from "./router";
-import VueHead from "vue-head";
-import LoadScript from "vue-plugin-load-script";
-Vue.use(VueHead);
-Vue.use(LoadScript);
 
 Vue.config.productionTip = false;
 
@@ -20,6 +16,17 @@ Vue.filter("twoOrphans",function(text) {
   return text.replace(/\s+[\w")]+$/, function(x) {
     return x.replace(/\s+/,"\xa0");// non-breaking space (javascript entity)
   });
+});
+
+// To specify the page <title> in the vue file:
+// export default {title: 'title'}
+Vue.mixin({
+  created: function() {
+    const title = this.$options.title;
+    if (title) {
+      document.title = title;
+    }
+  }
 });
 
 /* eslint-disable no-new */

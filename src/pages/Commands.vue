@@ -10,12 +10,12 @@
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
-            <CommandComponent v-for="command in columnOne(commands.main)" :key="command.name" :command="command"/>
+            <CommandComponent v-for="command in columnOne(commands.main)" :key="command.name" :command="command" />
           </ul>
         </div>
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
-            <CommandComponent v-for="command in columnTwo(commands.main)" :key="command.name" :command="command"/>
+            <CommandComponent v-for="command in columnTwo(commands.main)" :key="command.name" :command="command" />
           </ul>
         </div>
       </div>
@@ -26,12 +26,12 @@
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
-            <CommandComponent v-for="command in columnOne(commands.notifiers)" :key="command.name" :command="command"/>
+            <CommandComponent v-for="command in columnOne(commands.notifiers)" :key="command.name" :command="command" />
           </ul>
         </div>
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
-            <CommandComponent v-for="command in columnTwo(commands.notifiers)" :key="command.name" :command="command"/>
+            <CommandComponent v-for="command in columnTwo(commands.notifiers)" :key="command.name" :command="command" />
           </ul>
         </div>
       </div>
@@ -42,12 +42,12 @@
       <div class="flexbox">
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
-            <CommandComponent v-for="command in columnOne(commands.meta)" :key="command.name" :command="command"/>
+            <CommandComponent v-for="command in columnOne(commands.meta)" :key="command.name" :command="command" />
           </ul>
         </div>
         <div class="flexbox__item commands-column">
           <ul class="commands-list">
-            <CommandComponent v-for="command in columnTwo(commands.meta)" :key="command.name" :command="command"/>
+            <CommandComponent v-for="command in columnTwo(commands.meta)" :key="command.name" :command="command" />
           </ul>
         </div>
       </div>
@@ -60,6 +60,8 @@ import CommandComponent from "@/components/CommandComponent.vue";
 import commands from "@/assets/commandsdata.js";
 
 export default {
+  name: "CommandsPage",
+  title: "Commands | GW2Bot",
   components: {
     CommandComponent
   },
@@ -67,13 +69,6 @@ export default {
     return {
       commands
     };
-  },
-  head: {
-    title: {
-      inner: "Commands",
-      separator: "|",
-      complement: "GW2Bot"
-    }
   },
   methods: {
     columnOne(commands) {

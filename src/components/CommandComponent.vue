@@ -12,7 +12,7 @@
         title="Close"
         @click="hideTooltip(command)"
       />
-      <CommandArgumentsComponent :command="command"/>
+      <CommandArgumentsComponent :command="command" />
     </div>
 
     <h3 class="command__name">
@@ -83,7 +83,7 @@
             title="Close"
             @click="hideTooltip(subcommand)"
           />
-          <CommandArgumentsComponent :command="subcommand"/>
+          <CommandArgumentsComponent :command="subcommand" />
         </div>
 
         <p class="subcommand__name">

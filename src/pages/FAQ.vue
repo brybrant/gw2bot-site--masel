@@ -76,13 +76,8 @@
 
 <script>
 export default {
-  head: {
-    title: {
-      inner: "F.A.Q",
-      separator: "|",
-      complement: "GW2Bot"
-    }
-  }
+  name: "FaqPage",
+  title: "F.A.Q | GW2Bot"
 };
 </script>
 
