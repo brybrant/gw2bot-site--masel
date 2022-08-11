@@ -21,35 +21,38 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       usePostCSS: true
     })
   },
+  // we use webpack-dev-server for logging
+  stats: 'none',
   // cheap-module-eval-source-map is faster for development
   devtool: config.dev.devtool,
-
   // these devServer options should be customized in /config/index.js
   devServer: {
-    clientLogLevel: 'warning',
+    host: HOST || config.dev.host,
+    port: PORT || config.dev.port,
+    hot: true,
+    client: {
+      logging: 'warn',
+      overlay: config.dev.errorOverlay ? {warnings: false, errors: true} : false,
+      progress: true
+    },
     historyApiFallback: {
       rewrites: [
         { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
-      ],
+      ]
     },
-    hot: true,
-    contentBase: false, // since we use CopyWebpackPlugin.
-    compress: true,
-    host: HOST || config.dev.host,
-    port: PORT || config.dev.port,
+    devMiddleware: {
+      publicPath: config.dev.assetsPublicPath
+    },
+    static: {
+      directory: path.resolve(__dirname, '../static'),
+      watch: {
+        usePolling: config.dev.poll
+      }
+    },
     open: config.dev.autoOpenBrowser,
-    overlay: config.dev.errorOverlay
-      ? { warnings: false, errors: true }
-      : false,
-    publicPath: config.dev.assetsPublicPath,
-    proxy: config.dev.proxyTable,
-    quiet: true, // necessary for FriendlyErrorsPlugin
-    watchOptions: {
-      poll: config.dev.poll,
-    }
+    proxy: config.dev.proxyTable
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
