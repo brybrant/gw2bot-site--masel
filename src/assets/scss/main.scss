@@ -86,3 +86,7 @@ a, button {
     padding-right: $gutter-px;
   }
 }
+.footer-width {
+  margin: 0 auto;
+  max-width: $footer-width;
+}
