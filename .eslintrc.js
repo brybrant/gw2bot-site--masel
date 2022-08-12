@@ -25,6 +25,9 @@ module.exports = {
     "semi": ["error", "always"],
     "vue/max-attributes-per-line": ["error", {
       "singleline": 5
+    }],
+    "vue/singleline-html-element-content-newline": ["warn", {
+      "ignores": ["router-link", "a", "abbr", "span"]
     }]
   }
 };
