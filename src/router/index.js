@@ -4,6 +4,7 @@ import Home from "@/pages/Home.vue";
 import Commands from "@/pages/Commands.vue";
 import FAQ from "@/pages/FAQ.vue";
 import PrivacyPolicy from "@/pages/PrivacyPolicy.vue";
+import TermsOfService from "@/pages/TermsOfService.vue";
 import NotFound from "@/pages/NotFound.vue";
 
 Vue.use(Router);
@@ -13,6 +14,7 @@ const routes = [
   { path: "/faq", component: FAQ },
   { path: "/commands", component: Commands },
   { path: "/privacy-policy", component: PrivacyPolicy },
+  { path: "/terms-of-service", component: TermsOfService },
   { path: "*", component: NotFound }
 ];
 
