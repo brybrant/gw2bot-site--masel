@@ -8,8 +8,8 @@
       </header>
 
       <picture>
-        <source srcset="/static/img/error-quaggan.webp" type="image/webp">
-        <img src="/static/img/error-quaggan.png" alt="">
+        <source srcset="/static/img/404-quaggan.webp" type="image/webp">
+        <img src="/static/img/404-quaggan.png" alt="">
       </picture>
 
       <br>
