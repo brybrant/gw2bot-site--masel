@@ -18,8 +18,12 @@
       </video>-->
       <div class="feature-media__content">
         <div class="page-width page-padding">
+          <picture v-if="anniversary">
+            <source srcset="/static/img/party-quaggan.webp" type="image/webp">
+            <img class="party-quaggan" src="/static/img/party-quaggan.png" alt="">
+          </picture>
           <h1 class="feature-title">
-            Bring The World&nbsp;of Tyria Into&nbsp;Discord
+            {{ anniversary ? `Celebrate ${botAge} Years of&nbsp;GW2Bot!` : 'Bring The World&nbsp;of Tyria Into&nbsp;Discord' }}
           </h1>
           <a class="feature-button button button--giant" :href="$inviteLink" target="_blank">Add To Your Server!</a>
         </div>
@@ -51,6 +55,7 @@ export default {
   title: "GW2Bot - A Discord Bot for Guild Wars 2",
   data() {
     return {
+      botAge: (new Date()).getFullYear() - (new Date("September 9, 2017 18:18:00 GMT+00:00")).getFullYear(),
       month: ["january","february","march","april","may","june","july","august","september","october","november","december"][(new Date()).getMonth()],
       featureMedia: {
         january: "divinity-reach",
@@ -67,6 +72,20 @@ export default {
         december: "wintersday"
       }
     };
+  },
+  computed: {
+    anniversary() {
+      const today = (new Date());
+      if (
+        today.getMonth() === 8 &&
+        today.getDate() > 8 &&
+        today.getDate() < 30
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
   mounted() {
     let resizeTimer;
@@ -166,6 +185,14 @@ export default {
               0 8px  32px rgba($black,.5),
               0 16px 64px rgba($black,.25),
               0 32px 128px rgba($black,.125);
+}
+
+.party-quaggan {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  max-height: 394px;
+  vertical-align: top;
 }
 
 .bot-demo {

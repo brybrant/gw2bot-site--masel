@@ -31,8 +31,8 @@ export default {
 img {
   display: inline-block;
   width: 100%;
-  max-width: 336px;
-  max-height: 336px;
+  max-width: 356px;
+  max-height: 375px;
   vertical-align: top;
 }
 </style>
