@@ -1,4 +1,6 @@
-# gw2bot-site
+# THIS REPO IS OLD. PLEASE USE THE [NEW VERSION](https://github.com/brybrant/gw2bot-site)
+
+---
 
 > The website of [GW2Bot by Maselkov](https://github.com/Maselkov/GW2Bot).
 > 
